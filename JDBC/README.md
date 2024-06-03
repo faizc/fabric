@@ -16,3 +16,18 @@ Note - The JAR versions are good as of 3rd June 2024 but in future the same vers
 Check the following image for reference. 
 
 ![Alt text](snaps/1.png?raw=true)
+
+
+## Update the JDBC connection properties 
+
+In the JDBC Connection config, update the following properies,
+- JDBC URL - jdbc:sqlserver://<CONNECTION_STRING_FABRIC_WAREHOUSE>:1433;databaseName=<DATABASE_NAME>;encrypt=true;loginTimeout=30;authentication=ActiveDirectoryInteractive 
+
+- Driver class - com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+- Username - <AD_USER_NAME>
+
+- Password - <AD_PASSWORD>
+
+Run the experiments to check the connectivity. Check the following image for reference. 
+![Alt text](snaps/2.png?raw=true)
