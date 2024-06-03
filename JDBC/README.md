@@ -8,7 +8,7 @@ Follow the steps below to make JDBC connection using the JMeter tool.
 
 ## Load the Jars files to the JMeter tool 
 
-- Open the JMeter tool and click the on the Test Plan to all the required JAR files.
+- Open the JMeter tool and click the on the Test Plan to all the required [JAR](jars) files.
 - Click on the 'Browse' button and load all the jar files
 
 Note - The JAR versions are good as of 3rd June 2024 but in future the same version may not work, so you may need to use the latest versions. 
