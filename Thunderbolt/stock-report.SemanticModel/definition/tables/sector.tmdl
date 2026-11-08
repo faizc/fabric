@@ -1,0 +1,34 @@
+table sector
+	lineageTag: f8908526-1675-4ba8-8500-20523f4f64b2
+
+	column sector_id
+		dataType: string
+		lineageTag: 0e36e9c0-5b4f-4c7b-8cc8-3a294ff0f2d8
+		summarizeBy: none
+		sourceColumn: sector_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector_name
+		dataType: string
+		lineageTag: 345bdd48-0e4c-4766-a0d5-5742012cb1de
+		summarizeBy: none
+		sourceColumn: sector_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sector = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\faizchachiya\Downloads\sector.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"sector_id", type text}, {"sector_name", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

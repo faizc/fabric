@@ -1,0 +1,42 @@
+table portfolio
+	lineageTag: c596826f-bc49-4a90-b2c2-359ecaa0d35c
+
+	column portfolio_id
+		dataType: string
+		lineageTag: e84a28bf-e3f0-44c9-92ed-0f44e9f038ec
+		summarizeBy: none
+		sourceColumn: portfolio_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column investor_id
+		dataType: string
+		lineageTag: 911aa3d8-8183-4722-98ae-2010aaa01681
+		summarizeBy: none
+		sourceColumn: investor_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column portfolio_name
+		dataType: string
+		lineageTag: d7982e68-07f3-44c9-9223-fdc076c348c3
+		summarizeBy: none
+		sourceColumn: portfolio_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition portfolio = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\faizchachiya\Downloads\portfolio.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"portfolio_id", type text}, {"investor_id", type text}, {"portfolio_name", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/overviews/1.0.0/schema.json",
+  "widgets": [
+    {
+      "type": "graph",
+      "id": "244a0d1a-4129-4c69-be11-85eca528be9c",
+      "title": null
+    },
+    {
+      "type": "file",
+      "id": "024ba965-0268-4850-bb65-1b6bf6239b2e",
+      "title": null
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831722412644307",
+      "id": "fb965c07-0b7c-4678-b3ee-141e7659ce05",
+      "title": "ambient_temp_f"
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831723245778458",
+      "id": "0bba37af-b7b6-41cb-8999-1fa6a8547581",
+      "title": "engine_rpm"
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831725949830638",
+      "id": "d160275e-c8c4-4fb3-bbd6-a65731e05947",
+      "title": "engine_temp_f"
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831722768945565",
+      "id": "518816ae-c195-40b0-8a78-fe3d7627ea91",
+      "title": "fuel_pct"
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831725303951916",
+      "id": "eaabf4c2-047f-4928-baf2-1cdc95edec5f",
+      "title": "heading_degrees"
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831725763554442",
+      "id": "a74fd1f4-f5b1-4c94-bf10-e8c6f826d8ab",
+      "title": "latitude"
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831723795234448",
+      "id": "6ae452af-60b4-47d5-bfb3-7482fc9aaa02",
+      "title": "longitude"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890326757402125",
+      "id": "d33942e8-cb0f-4ffc-b3a4-4527038adfc6",
+      "title": "actual_arrival"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890326408382834",
+      "id": "2b8e9942-fc9b-4541-b431-e3ecf768e735",
+      "title": "actual_departure"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890326001356773",
+      "id": "4b7c496d-049a-4a36-9772-96a5247a4ec5",
+      "title": "current_latitude"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890326663731452",
+      "id": "8b6decc2-966a-4a6b-a086-d43927442eeb",
+      "title": "current_longitude"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890326210000901",
+      "id": "f8c2de23-de58-4b8d-b98a-1bf7adf4f9bf",
+      "title": "driver_id"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890327135569640",
+      "id": "0c4285d1-19e4-4d5a-b70c-0c47c2d5802a",
+      "title": "load_id"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890327741598942",
+      "id": "e6545190-9db3-43a7-bc95-fe50afb694fa",
+      "title": "odometer_end"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890327286985371",
+      "id": "b18aab1a-b2f1-49bd-996b-336174d8c6d5",
+      "title": "odometer_start"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890325979415439",
+      "id": "23f9d140-5e51-4e9f-bbcb-39fcfb0dc2f5",
+      "title": "route_id"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890329084065191",
+      "id": "05cc575a-2c2b-45b6-80ca-0dff9a456700",
+      "title": "scheduled_arrival"
+    },
+    {
+      "type": "barChart",
+      "yAxisPropertyId": "2885890326345163060",
+      "id": "5903caea-b0bb-483f-951f-73277495ddee",
+      "title": "scheduled_departure"
+    },
+    {
+      "type": "lineChart",
+      "yAxisPropertyId": "4073831723245778458",
+      "id": "81f85f52-ca9b-4614-aea2-6302f767bff3",
+      "title": "FC"
+    }
+  ],
+  "settings": {
+    "type": "fixedTime",
+    "fixedTimeRange": "Last30Minutes",
+    "interval": "OneMinute",
+    "aggregation": "Average"
+  }
+}

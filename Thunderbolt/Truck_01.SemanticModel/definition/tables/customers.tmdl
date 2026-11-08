@@ -1,0 +1,90 @@
+table customers
+	lineageTag: 83ef572a-5fd7-4177-81b3-c3ea4b700d11
+
+	column customer_id
+		dataType: string
+		lineageTag: 00568068-7cb9-4013-84fd-de4c7ddc7d5b
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 173b2489-362b-47a8-940b-5a4e11aa9f50
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact_name
+		dataType: string
+		lineageTag: f2fa8ca3-7a71-477d-8d88-23492cea67e3
+		summarizeBy: none
+		sourceColumn: contact_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact_email
+		dataType: string
+		lineageTag: 29a95bd5-f3b7-46ce-b24a-f51245c31b06
+		summarizeBy: none
+		sourceColumn: contact_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact_phone
+		dataType: string
+		lineageTag: 9cd94d79-da58-48f1-afbb-725236759281
+		summarizeBy: none
+		sourceColumn: contact_phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		lineageTag: cff0964a-0c01-4a6b-91a6-647f2a87228b
+		summarizeBy: none
+		sourceColumn: address
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 9b421015-a1e9-4f23-a40a-b232126377e7
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: b9ad9e8c-ac93-45a4-adc4-6b36e71c6391
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: 57c238b7-a33f-4349-8e9b-39d67da8e9cc
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\tmp\Fabric\trucking-ontology\reference_data\customers.jsonl"), null, null)}),
+				    #"Transformed Column" = Table.TransformColumns(Source, {"Column1", Json.Document}),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Transformed Column", "Column1", {"customer_id", "name", "contact_name", "contact_email", "contact_phone", "address", "city", "state", "industry"}, {"customer_id", "name", "contact_name", "contact_email", "contact_phone", "address", "city", "state", "industry"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"customer_id", type text}, {"name", type text}, {"contact_name", type text}, {"contact_email", type text}, {"contact_phone", type text}, {"address", type text}, {"city", type text}, {"state", type text}, {"industry", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

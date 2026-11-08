@@ -1,0 +1,37 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["customers","drivers","loads","trips","routes","terminals","trailers","trucks"]
+
+ref table customers
+ref table drivers
+ref table DateTableTemplate_0ffa384c-11a2-4247-918b-02ef4a96202c
+ref table LocalDateTable_c9543dbb-de1b-46d7-abb7-7f6aaa3cb093
+ref table LocalDateTable_d4d5c34f-8185-4efe-8214-96251b559884
+ref table loads
+ref table LocalDateTable_ae3ccc01-6485-4e07-b2f4-d649c0225691
+ref table LocalDateTable_4a931ba7-fe20-4ac7-b173-a723cef83c2e
+ref table LocalDateTable_ca9282fa-117a-4b5d-bc7a-b400ea390665
+ref table LocalDateTable_d9104658-40fe-42dd-8b03-110b70fbac78
+ref table trips
+ref table LocalDateTable_427fc4ac-7480-458e-bbf3-3575938c3664
+ref table LocalDateTable_ff141dc2-3d63-42e0-b05b-928ad08294df
+ref table LocalDateTable_944e85ca-3a3f-4e3b-9cb8-5e9a803d97fa
+ref table LocalDateTable_2b30f445-5cc1-4587-868d-ad9ea63ac880
+ref table routes
+ref table terminals
+ref table trailers
+ref table LocalDateTable_b2eadce5-b985-4ecc-9a2a-a319db80e34c
+ref table trucks
+ref table LocalDateTable_ca8d52ae-bb70-4c0b-bef2-78019cd40a6f
+
+ref cultureInfo en-IN
+

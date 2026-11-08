@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "6c5f46d0-de3e-4d03-bc8a-69cb0e74d494",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "investor_id",
+        "targetPropertyId": "8870017695038035652"
+      },
+      {
+        "sourceColumnName": "portfolio_id",
+        "targetPropertyId": "8870017694787403151"
+      },
+      {
+        "sourceColumnName": "portfolio_name",
+        "targetPropertyId": "8870017695620126891"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "f5a5b916-3052-acd3-4850-7f788a158871",
+      "sourceTableName": "portfolio",
+      "sourceSchema": null
+    }
+  }
+}

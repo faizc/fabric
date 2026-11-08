@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "65bb3d2b-5418-9340-4973-68c3d70ab6b1",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "Stock_Ontology",
+  "type": "ontology",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "Company",
+      "is_selected": true,
+      "display_name": "Company",
+      "type": "ontology.entity",
+      "description": "company_id,EventTime,company_name,MarketStatus,headquarters,Price,market_cap_billion,Trend,sector_id,Volume",
+      "children": []
+    },
+    {
+      "id": "Sector",
+      "is_selected": true,
+      "display_name": "Sector",
+      "type": "ontology.entity",
+      "description": "sector_id,sector_name",
+      "children": []
+    },
+    {
+      "id": "PortfolioHolding",
+      "is_selected": true,
+      "display_name": "PortfolioHolding",
+      "type": "ontology.entity",
+      "description": "avg_purchase_price,holding_id,portfolio_id,quantity,stock_symbol",
+      "children": []
+    },
+    {
+      "id": "Portfolio",
+      "is_selected": true,
+      "display_name": "Portfolio",
+      "type": "ontology.entity",
+      "description": "investor_id,portfolio_id,portfolio_name",
+      "children": []
+    },
+    {
+      "id": "Investor",
+      "is_selected": true,
+      "display_name": "Investor",
+      "type": "ontology.entity",
+      "description": "investor_id,investor_name,investor_type,risk_profile",
+      "children": []
+    }
+  ]
+}

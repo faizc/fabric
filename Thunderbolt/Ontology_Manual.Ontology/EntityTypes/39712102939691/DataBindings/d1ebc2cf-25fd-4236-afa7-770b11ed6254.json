@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "d1ebc2cf-25fd-4236-afa7-770b11ed6254",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "address",
+        "targetPropertyId": "2941816757133019360"
+      },
+      {
+        "sourceColumnName": "city",
+        "targetPropertyId": "2941816759967482333"
+      },
+      {
+        "sourceColumnName": "contact_email",
+        "targetPropertyId": "2941816758108460454"
+      },
+      {
+        "sourceColumnName": "contact_name",
+        "targetPropertyId": "2941816759916611631"
+      },
+      {
+        "sourceColumnName": "contact_phone",
+        "targetPropertyId": "2941816760329073742"
+      },
+      {
+        "sourceColumnName": "customer_id",
+        "targetPropertyId": "2941816759835438961"
+      },
+      {
+        "sourceColumnName": "industry",
+        "targetPropertyId": "2941816760547043320"
+      },
+      {
+        "sourceColumnName": "name",
+        "targetPropertyId": "2941816758095642436"
+      },
+      {
+        "sourceColumnName": "state",
+        "targetPropertyId": "2941816757146905139"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "f5a5b916-3052-acd3-4850-7f788a158871",
+      "sourceTableName": "customers",
+      "sourceSchema": null
+    }
+  }
+}

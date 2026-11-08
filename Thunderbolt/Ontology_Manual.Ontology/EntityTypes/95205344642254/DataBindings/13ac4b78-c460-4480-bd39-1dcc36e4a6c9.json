@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "13ac4b78-c460-4480-bd39-1dcc36e4a6c9",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "timestamp",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "ambient_temp_f",
+        "targetPropertyId": "4073831722412644307"
+      },
+      {
+        "sourceColumnName": "engine_rpm",
+        "targetPropertyId": "4073831723245778458"
+      },
+      {
+        "sourceColumnName": "engine_temp_f",
+        "targetPropertyId": "4073831725949830638"
+      },
+      {
+        "sourceColumnName": "fuel_pct",
+        "targetPropertyId": "4073831722768945565"
+      },
+      {
+        "sourceColumnName": "heading_degrees",
+        "targetPropertyId": "4073831725303951916"
+      },
+      {
+        "sourceColumnName": "latitude",
+        "targetPropertyId": "4073831725763554442"
+      },
+      {
+        "sourceColumnName": "longitude",
+        "targetPropertyId": "4073831723795234448"
+      },
+      {
+        "sourceColumnName": "odometer_miles",
+        "targetPropertyId": "4073831724255298567"
+      },
+      {
+        "sourceColumnName": "oil_pressure_psi",
+        "targetPropertyId": "4073831722317152287"
+      },
+      {
+        "sourceColumnName": "speed_mph",
+        "targetPropertyId": "4073831722763925685"
+      },
+      {
+        "sourceColumnName": "trip_id",
+        "targetPropertyId": "2885890368546618513"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "KustoTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "3afeb703-ad78-b794-490d-5a0ba3f4d2fb",
+      "clusterUri": "https://trd-c757kaycev6hss806u.z3.kusto.fabric.microsoft.com",
+      "databaseName": "trucking_db",
+      "sourceTableName": "TelemetryEvent"
+    }
+  }
+}

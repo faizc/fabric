@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "bf575749-a890-47e5-b6b0-72f5ea6fd99f",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "EventTime",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "EventTime",
+        "targetPropertyId": "7057956983003056273"
+      },
+      {
+        "sourceColumnName": "MarketStatus",
+        "targetPropertyId": "7057956984042694113"
+      },
+      {
+        "sourceColumnName": "Price",
+        "targetPropertyId": "7057956983458416554"
+      },
+      {
+        "sourceColumnName": "Trend",
+        "targetPropertyId": "7057956985584264176"
+      },
+      {
+        "sourceColumnName": "Volume",
+        "targetPropertyId": "7057956982041146144"
+      },
+      {
+        "sourceColumnName": "CompanyId",
+        "targetPropertyId": "7050896752498778900"
+      },
+      {
+        "sourceColumnName": "StockSymbol",
+        "targetPropertyId": "8937382242428760631"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "KustoTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "3afeb703-ad78-b794-490d-5a0ba3f4d2fb",
+      "clusterUri": "https://trd-c757kaycev6hss806u.z3.kusto.fabric.microsoft.com",
+      "databaseName": "stock_db",
+      "sourceTableName": "StockPriceEvents"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "afe5733f-e677-4dd2-bdf1-38cdf2d4f6dd",
+        "clusterUri": "https://trd-c757kaycev6hss806u.z3.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "e83bb602-711c-4aa8-a9b9-3e6bf4b886d6"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "0fd4b417-5938-4eae-a05b-a8a76331c858",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n\n// Use \"take\" to view a sample number of records in the table and check the data.\nYOUR_TABLE_HERE\n| take 100\n\n// See how many records are in the table.\nYOUR_TABLE_HERE\n| count\n\n// This query returns the number of ingestions per hour in the given table.\nYOUR_TABLE_HERE\n| summarize IngestionCount = count() by bin(ingestion_time(), 1h)\n\n",
+        "title": "Tab",
+        "dataSourceId": "afe5733f-e677-4dd2-bdf1-38cdf2d4f6dd"
+      },
+      {
+        "id": "843d2b19-4313-493b-b4c5-1b467c039a62",
+        "content": "//See how many records are in the table.\nTelemetryEvent\n| where engine_temp_f > 200\n| summarize count() by truck_id, bin(timestamp, 1h)\n//| count\n\n\nTelemetryEvent\n| getschema ",
+        "title": "",
+        "dataSourceId": "afe5733f-e677-4dd2-bdf1-38cdf2d4f6dd"
+      },
+      {
+        "id": "05340801-5f50-494d-9e5c-e83f1b913a7d",
+        "content": "// Use 'take' to view a sample number of records in the table and check the data.\nHOSStatusChangeEvent\n| where driver_id == '7c60b9f5-b741-47d4-98d8-d1ddcee685d5'\n| count\n\n// View a representation of the schema as a table with column names, column type, and data type.\nHOSStatusChangeEvent\n| distinct driver_id\n| limit 10\n\n\nHOSStatusChangeEvent\n| getschema \n\nHOSStatusChangeEvent\n| summarize\n    Rows=count(),\n    Drivers=dcount(driver_id),\n    MinTime=min(timestamp),\n    MaxTime=max(timestamp)\n\n\n    HOSStatusChangeEvent\n| top 20 by timestamp desc\n| project driver_id,\n         timestamp,\n         cycle_hours_remaining,\n         cycle_hours_used",
+        "title": "",
+        "dataSourceId": "afe5733f-e677-4dd2-bdf1-38cdf2d4f6dd"
+      },
+      {
+        "id": "0be12dda-06a3-4213-8748-ddf2b24b37c9",
+        "content": "// Use 'take' to view a sample number of records in the table and check the data.\nHOSStatusChangeEvent\n| take 100\n",
+        "title": "",
+        "dataSourceId": "afe5733f-e677-4dd2-bdf1-38cdf2d4f6dd"
+      },
+      {
+        "id": "3030fbd8-87db-4c38-9b3b-4e4f677a2da2",
+        "content": "// Use 'take' to view a sample number of records in the table and check the data.\nHOSStatusChangeEvent\n| where driver_id == \"9f68ed0d-7c4d-4aa2-b2c2-7a0e676def26\"\n| summarize min(timestamp), max(timestamp)\n| take 100\n\nHOSStatusChangeEvent\n| getschema \n\n.set-or-append HOSStatusChangeEvent <|\nHOSStatusChangeEvent\n| where driver_id == \"9f68ed0d-7c4d-4aa2-b2c2-7a0e676def26\"\n| extend timestamp = ago(10m), cycle_hours_used = 52.0, cycle_hours_remaining = 14.0, event_id = strcat(tostring(new_guid()));\n\n.append HOSStatusChangeEvent <|\nrange i from 1 to 20 step 1\n| extend\n    event_id = strcat(tostring(new_guid())),\n    event_type = \"HOSStatusChangeEvent\",\n    timestamp = ago(20m) + i * 1m,\n    source = \"FabricTest\",\n    driver_id = \"9f68ed0d-7c4d-4aa2-b2c2-7a0e676def26\",\n    trip_id = \"f2ba0526-e359-43cc-9956-108ceb5462da\",\n    truck_id = \"5acaa49b-a30e-4f91-bc8d-729c403d9bbc\",\n    previous_status = \"driving\",\n    new_status = \"driving\",\n    driving_hours_used = 40.0 + i * 0.1,\n    driving_hours_remaining = 30.0 - i * 0.1,\n    duty_hours_used = 50.0 + i * 0.1,\n    duty_hours_remaining = 20.0 - i * 0.1,\n    cycle_hours_used = 44.0 + i * 0.1,\n    cycle_hours_remaining = 26.0 - i * 0.1,\n    break_time_remaining_min = 30 - i,\n    latitude = 40.7128 + i * 0.001,\n    longitude = -74.0060 + i * 0.001\n\n\nHOSStatusChangeEvent\n| summarize count() by cycle_hours_used, bin(timestamp, 5m)\n| render columnchart  ",
+        "title": "",
+        "dataSourceId": "afe5733f-e677-4dd2-bdf1-38cdf2d4f6dd"
+      }
+    ],
+    "querysetType": "Embedded"
+  }
+}

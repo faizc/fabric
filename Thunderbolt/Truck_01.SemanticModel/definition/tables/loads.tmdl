@@ -1,0 +1,182 @@
+table loads
+	lineageTag: 542066f3-d05e-408a-8e67-69be2a078489
+
+	column load_id
+		dataType: string
+		lineageTag: ec27f762-2b39-48e3-a7a0-52bbbbe03c4f
+		summarizeBy: none
+		sourceColumn: load_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_number
+		dataType: string
+		lineageTag: d11cfa4a-2f67-4fbd-970e-6ca046f18fa7
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: bccaa887-9c48-4806-83b8-9a0b17d3e43a
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_type
+		dataType: string
+		lineageTag: 95c1d8ea-e76f-4093-b807-f5c4cac093c4
+		summarizeBy: none
+		sourceColumn: load_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: d5154f7c-ef55-4a00-8818-6f9c41f5ff50
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight_lbs
+		dataType: int64
+		formatString: 0
+		lineageTag: b445f619-ceb6-429d-9c2c-18e1d3a7fcca
+		summarizeBy: sum
+		sourceColumn: weight_lbs
+
+		annotation SummarizationSetBy = Automatic
+
+	column required_trailer_type
+		dataType: string
+		lineageTag: 3c62144f-4baf-4e69-a59c-fa695b58562b
+		summarizeBy: none
+		sourceColumn: required_trailer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column required_endorsements
+		dataType: string
+		lineageTag: bcd34301-fbfa-49d8-853f-1dba299373b1
+		summarizeBy: none
+		sourceColumn: required_endorsements
+
+		annotation SummarizationSetBy = Automatic
+
+	column pickup_terminal_id
+		dataType: string
+		lineageTag: 5c912ab3-7bf4-4935-91c7-0a8a9aebb805
+		summarizeBy: none
+		sourceColumn: pickup_terminal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_terminal_id
+		dataType: string
+		lineageTag: f2b2ada3-2679-4a07-ad56-c9a59dbe609c
+		summarizeBy: none
+		sourceColumn: delivery_terminal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pickup_window_start
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5dc7d2b4-fccd-454d-8e9b-de4f43cb2167
+		summarizeBy: none
+		sourceColumn: pickup_window_start
+
+		variation Variation
+			isDefault
+			relationship: ffc3106a-d779-4d5c-b9dc-b126b7d74acb
+			defaultHierarchy: LocalDateTable_ae3ccc01-6485-4e07-b2f4-d649c0225691.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column pickup_window_end
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5f97a29c-cb8e-4af0-8ac3-9ebf00216848
+		summarizeBy: none
+		sourceColumn: pickup_window_end
+
+		variation Variation
+			isDefault
+			relationship: d0e26d1f-c058-478f-8109-e28ce2ab3806
+			defaultHierarchy: LocalDateTable_4a931ba7-fe20-4ac7-b173-a723cef83c2e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_window_start
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1a31f49b-a9f6-437c-88fa-c85632be4281
+		summarizeBy: none
+		sourceColumn: delivery_window_start
+
+		variation Variation
+			isDefault
+			relationship: e7ba7ede-f4ed-41d5-9842-881a1bc642ca
+			defaultHierarchy: LocalDateTable_ca9282fa-117a-4b5d-bc7a-b400ea390665.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_window_end
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cd0092dd-7e7a-4198-81e3-42e055742297
+		summarizeBy: none
+		sourceColumn: delivery_window_end
+
+		variation Variation
+			isDefault
+			relationship: bb047bba-3bf4-47fc-97ad-74c76f07a10d
+			defaultHierarchy: LocalDateTable_d9104658-40fe-42dd-8b03-110b70fbac78.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 5b047e60-b16e-411c-b25e-5f712d177f9a
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column priority
+		dataType: string
+		lineageTag: 3997d7ac-880e-4327-b0fe-b387b4b03a5e
+		summarizeBy: none
+		sourceColumn: priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column value_usd
+		dataType: double
+		lineageTag: 20f8d3b7-aaca-4758-911d-951524fccc64
+		summarizeBy: sum
+		sourceColumn: value_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition loads = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\tmp\Fabric\trucking-ontology\reference_data\loads.jsonl"), null, null)}),
+				    #"Transformed Column" = Table.TransformColumns(Source, {"Column1", Json.Document}),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Transformed Column", "Column1", {"load_id", "load_number", "customer_id", "load_type", "description", "weight_lbs", "required_trailer_type", "required_endorsements", "pickup_terminal_id", "delivery_terminal_id", "pickup_window_start", "pickup_window_end", "delivery_window_start", "delivery_window_end", "status", "priority", "value_usd"}, {"load_id", "load_number", "customer_id", "load_type", "description", "weight_lbs", "required_trailer_type", "required_endorsements", "pickup_terminal_id", "delivery_terminal_id", "pickup_window_start", "pickup_window_end", "delivery_window_start", "delivery_window_end", "status", "priority", "value_usd"}),
+				    #"Expanded required_endorsements" = Table.ExpandListColumn(#"Expanded Column1", "required_endorsements"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded required_endorsements",{{"load_id", type text}, {"load_number", type text}, {"customer_id", type text}, {"load_type", type text}, {"description", type text}, {"weight_lbs", Int64.Type}, {"required_trailer_type", type text}, {"required_endorsements", type text}, {"pickup_terminal_id", type text}, {"delivery_terminal_id", type text}, {"pickup_window_start", type datetime}, {"pickup_window_end", type datetime}, {"delivery_window_start", type datetime}, {"delivery_window_end", type datetime}, {"status", type text}, {"priority", type text}, {"value_usd", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

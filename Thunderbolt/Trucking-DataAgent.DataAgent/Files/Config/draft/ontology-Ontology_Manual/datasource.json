@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "35918abf-e69a-91dd-41f1-d6a28355c711",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "Ontology_Manual",
+  "type": "ontology",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "Trip",
+      "is_selected": true,
+      "display_name": "Trip",
+      "type": "ontology.entity",
+      "description": "actual_arrival,ambient_temp_f,actual_departure,engine_rpm,current_latitude,engine_temp_f,current_longitude,fuel_pct,driver_id,heading_degrees,load_id,latitude,odometer_end,longitude,odometer_start,odometer_miles,route_id,oil_pressure_psi,scheduled_arrival,speed_mph,scheduled_departure,status,trailer_id,trip_id,trip_number,truck_id",
+      "children": []
+    },
+    {
+      "id": "Route",
+      "is_selected": true,
+      "display_name": "Route",
+      "type": "ontology.entity",
+      "description": "destination_terminal_id,distance_miles,estimated_hours,estimated_hours_with_stops,fuel_stops_recommended,origin_terminal_id,route_id,route_name,toll_cost_estimate,waypoints",
+      "children": []
+    },
+    {
+      "id": "Driver",
+      "is_selected": true,
+      "display_name": "Driver",
+      "type": "ontology.entity",
+      "description": "cdl_expiration_date,cdl_number,cdl_state,driver_id,email,employee_id,first_name,hire_date,home_terminal_id,last_name,phone,status,supervisor_email",
+      "children": []
+    },
+    {
+      "id": "Load",
+      "is_selected": true,
+      "display_name": "Load",
+      "type": "ontology.entity",
+      "description": "customer_id,delivery_terminal_id,delivery_window_end,delivery_window_start,description,load_id,load_number,load_type,pickup_terminal_id,pickup_window_end,pickup_window_start,priority,required_trailer_type,status,value_usd,weight_lbs",
+      "children": []
+    },
+    {
+      "id": "Customer",
+      "is_selected": true,
+      "display_name": "Customer",
+      "type": "ontology.entity",
+      "description": "address,city,contact_email,contact_name,contact_phone,customer_id,industry,name,state",
+      "children": []
+    },
+    {
+      "id": "Terminal",
+      "is_selected": true,
+      "display_name": "Terminal",
+      "type": "ontology.entity",
+      "description": "address,capacity_trucks,city,has_maintenance_bay,latitude,longitude,name,state,terminal_id,timezone",
+      "children": []
+    },
+    {
+      "id": "Trailer",
+      "is_selected": true,
+      "display_name": "Trailer",
+      "type": "ontology.entity",
+      "description": "home_terminal_id,last_inspection_date,length_ft,max_weight_lbs,status,trailer_id,trailer_number,type,year",
+      "children": []
+    },
+    {
+      "id": "Truck",
+      "is_selected": true,
+      "display_name": "Truck",
+      "type": "ontology.entity",
+      "description": "fuel_capacity_gallons,home_terminal_id,last_dot_inspection_date,make,model,next_maintenance_miles,next_maintenance_type,odometer_miles,status,truck_id,truck_number,vin,year",
+      "children": []
+    }
+  ]
+}

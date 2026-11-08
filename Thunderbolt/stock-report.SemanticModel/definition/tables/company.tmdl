@@ -1,0 +1,64 @@
+table company
+	lineageTag: 7cdda63d-3b06-4e2a-bdf5-77ca15eac760
+
+	column company_id
+		dataType: string
+		lineageTag: 2e6f3f35-6c2e-4c94-9895-39a97f9cba48
+		summarizeBy: none
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_symbol
+		dataType: string
+		lineageTag: 7cacce71-9d95-498d-9263-59814266e89e
+		summarizeBy: none
+		sourceColumn: stock_symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: f6367020-752d-4ae8-9c49-994a73b31e31
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector_id
+		dataType: string
+		lineageTag: ae568287-5ffe-4960-a4fc-5e32bd90b857
+		summarizeBy: none
+		sourceColumn: sector_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_cap_billion
+		dataType: int64
+		formatString: 0
+		lineageTag: 284a0885-82c1-4fb7-8b5d-a8f7a419acde
+		summarizeBy: sum
+		sourceColumn: market_cap_billion
+
+		annotation SummarizationSetBy = Automatic
+
+	column headquarters
+		dataType: string
+		lineageTag: 871dc53f-88a1-4ba0-bc76-740f3acde14f
+		summarizeBy: none
+		sourceColumn: headquarters
+
+		annotation SummarizationSetBy = Automatic
+
+	partition company = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\faizchachiya\Downloads\company.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"company_id", type text}, {"stock_symbol", type text}, {"company_name", type text}, {"sector_id", type text}, {"market_cap_billion", Int64.Type}, {"headquarters", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

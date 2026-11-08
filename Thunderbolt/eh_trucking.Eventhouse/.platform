@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "eh_trucking"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3afeb703-ad78-b794-490d-5a0ba3f4d2fb"
+  }
+}

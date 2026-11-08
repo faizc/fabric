@@ -1,0 +1,134 @@
+table trucks
+	lineageTag: b94cee3d-9dc4-4b5b-92d2-b9ab657e5e9b
+
+	column truck_id
+		dataType: string
+		lineageTag: bb83a17e-9806-49c7-9e41-75b5ee1a2869
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_number
+		dataType: string
+		lineageTag: f2c68352-aa7c-4a62-955b-416b784c3e03
+		summarizeBy: none
+		sourceColumn: truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vin
+		dataType: string
+		lineageTag: dcd2fb0d-7df1-4b37-8261-adf834137e6f
+		summarizeBy: none
+		sourceColumn: vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column make
+		dataType: string
+		lineageTag: cd835b40-1cea-45a6-bcdd-074048613e0e
+		summarizeBy: none
+		sourceColumn: make
+
+		annotation SummarizationSetBy = Automatic
+
+	column model
+		dataType: string
+		lineageTag: 6e242fff-55f5-4257-8623-243ee716295a
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 85c0c137-19e3-495e-8d67-f122779b67f0
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_miles
+		dataType: int64
+		formatString: 0
+		lineageTag: 6cf59f49-713f-4b10-aae9-48f71cea66e2
+		summarizeBy: sum
+		sourceColumn: odometer_miles
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_capacity_gallons
+		dataType: int64
+		formatString: 0
+		lineageTag: 434fc8c3-f788-40bd-9463-5d645737f239
+		summarizeBy: sum
+		sourceColumn: fuel_capacity_gallons
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 8dbad017-e1c5-43de-bef5-a4947a39d5bb
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_terminal_id
+		dataType: string
+		lineageTag: 517b11d1-8738-4f54-b651-c8ee04ecf7a1
+		summarizeBy: none
+		sourceColumn: home_terminal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column next_maintenance_miles
+		dataType: int64
+		formatString: 0
+		lineageTag: 56f816f7-5853-4be9-a23c-da7da94cc3be
+		summarizeBy: sum
+		sourceColumn: next_maintenance_miles
+
+		annotation SummarizationSetBy = Automatic
+
+	column next_maintenance_type
+		dataType: string
+		lineageTag: 0b4be25a-35ce-4ff9-8459-5839ae170bb6
+		summarizeBy: none
+		sourceColumn: next_maintenance_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_dot_inspection_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1981e299-d45a-4469-ac7f-fff56c7365ad
+		summarizeBy: none
+		sourceColumn: last_dot_inspection_date
+
+		variation Variation
+			isDefault
+			relationship: bab86390-3dae-40c3-9d24-59a85f9d15d0
+			defaultHierarchy: LocalDateTable_ca8d52ae-bb70-4c0b-bef2-78019cd40a6f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition trucks = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\tmp\Fabric\trucking-ontology\reference_data\trucks.jsonl"), null, null)}),
+				    #"Transformed Column" = Table.TransformColumns(Source, {"Column1", Json.Document}),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Transformed Column", "Column1", {"truck_id", "truck_number", "vin", "make", "model", "year", "odometer_miles", "fuel_capacity_gallons", "status", "home_terminal_id", "next_maintenance_miles", "next_maintenance_type", "last_dot_inspection_date"}, {"truck_id", "truck_number", "vin", "make", "model", "year", "odometer_miles", "fuel_capacity_gallons", "status", "home_terminal_id", "next_maintenance_miles", "next_maintenance_type", "last_dot_inspection_date"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"truck_id", type text}, {"truck_number", type text}, {"vin", type text}, {"make", type text}, {"model", type text}, {"year", Int64.Type}, {"odometer_miles", Int64.Type}, {"fuel_capacity_gallons", Int64.Type}, {"status", type text}, {"home_terminal_id", type text}, {"next_maintenance_miles", Int64.Type}, {"next_maintenance_type", type text}, {"last_dot_inspection_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

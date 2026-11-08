@@ -1,0 +1,87 @@
+relationship 51579435-e63b-400c-b1f5-70319f607ba7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: drivers.cdl_expiration_date
+	toColumn: LocalDateTable_c9543dbb-de1b-46d7-abb7-7f6aaa3cb093.Date
+
+relationship 55964e95-8a63-45bc-89bb-4923711d5646
+	joinOnDateBehavior: datePartOnly
+	fromColumn: drivers.hire_date
+	toColumn: LocalDateTable_d4d5c34f-8185-4efe-8214-96251b559884.Date
+
+relationship ffc3106a-d779-4d5c-b9dc-b126b7d74acb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: loads.pickup_window_start
+	toColumn: LocalDateTable_ae3ccc01-6485-4e07-b2f4-d649c0225691.Date
+
+relationship d0e26d1f-c058-478f-8109-e28ce2ab3806
+	joinOnDateBehavior: datePartOnly
+	fromColumn: loads.pickup_window_end
+	toColumn: LocalDateTable_4a931ba7-fe20-4ac7-b173-a723cef83c2e.Date
+
+relationship e7ba7ede-f4ed-41d5-9842-881a1bc642ca
+	joinOnDateBehavior: datePartOnly
+	fromColumn: loads.delivery_window_start
+	toColumn: LocalDateTable_ca9282fa-117a-4b5d-bc7a-b400ea390665.Date
+
+relationship bb047bba-3bf4-47fc-97ad-74c76f07a10d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: loads.delivery_window_end
+	toColumn: LocalDateTable_d9104658-40fe-42dd-8b03-110b70fbac78.Date
+
+relationship AutoDetected_7f558e86-571f-48f4-b007-0cae35bd30d6
+	fromColumn: loads.customer_id
+	toColumn: customers.customer_id
+
+relationship 26bbdacd-377b-4159-8d2d-23b6bb733829
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trips.scheduled_departure
+	toColumn: LocalDateTable_427fc4ac-7480-458e-bbf3-3575938c3664.Date
+
+relationship 65a4c0d8-d7ff-4493-8d08-049fda18b9ee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trips.scheduled_arrival
+	toColumn: LocalDateTable_ff141dc2-3d63-42e0-b05b-928ad08294df.Date
+
+relationship 728eea86-8698-4989-bef9-1630c6cb9cb0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trips.actual_departure
+	toColumn: LocalDateTable_944e85ca-3a3f-4e3b-9cb8-5e9a803d97fa.Date
+
+relationship 1200119e-ec1b-4aef-b967-fa84c077f6ba
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trips.actual_arrival
+	toColumn: LocalDateTable_2b30f445-5cc1-4587-868d-ad9ea63ac880.Date
+
+relationship AutoDetected_534e470f-93ed-4d0e-8af8-1094a776b095
+	fromColumn: drivers.driver_id
+	toColumn: trips.driver_id
+
+relationship AutoDetected_78fc2e57-5b41-4500-9143-ea73ed4400d6
+	fromColumn: loads.load_id
+	toColumn: trips.load_id
+
+relationship AutoDetected_6f8e38d6-71a6-489f-a650-7071a4f21e0c
+	fromColumn: trips.route_id
+	toColumn: routes.route_id
+
+relationship b6425d29-b22b-428a-9c8f-2300fc10e19a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trailers.last_inspection_date
+	toColumn: LocalDateTable_b2eadce5-b985-4ecc-9a2a-a319db80e34c.Date
+
+relationship AutoDetected_935b07d5-27bc-4cae-9849-5a45c0c82656
+	fromColumn: trips.trailer_id
+	toColumn: trailers.trailer_id
+
+relationship bab86390-3dae-40c3-9d24-59a85f9d15d0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trucks.last_dot_inspection_date
+	toColumn: LocalDateTable_ca8d52ae-bb70-4c0b-bef2-78019cd40a6f.Date
+
+relationship AutoDetected_f391d8f3-6c2a-404a-aa1f-9af3b3081573
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: trips.truck_id
+	toColumn: trucks.truck_id
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Stock-Ticker-Notebook"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e166e6ed-5860-9d8b-412f-b8223fe7348a"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "adae94be-3ce4-4ca2-954d-2084c26ee946",
+        "clusterUri": "https://trd-c757kaycev6hss806u.z3.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "53fd8aa4-5806-4d2b-88ae-73d828728949"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "abe930cc-28f3-4df3-87fc-2d9fe637a24f",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n\n// Use \"take\" to view a sample number of records in the table and check the data.\nYOUR_TABLE_HERE\n| take 100\n\n// See how many records are in the table.\nYOUR_TABLE_HERE\n| count\n\n// This query returns the number of ingestions per hour in the given table.\nYOUR_TABLE_HERE\n| summarize IngestionCount = count() by bin(ingestion_time(), 1h)\n\n",
+        "title": "Tab",
+        "dataSourceId": "adae94be-3ce4-4ca2-954d-2084c26ee946"
+      },
+      {
+        "id": "6ae0dfbd-256a-4256-88ad-f69e827f80c1",
+        "content": "// Use 'take' to view a sample number of records in the table and check the data.\nStockPriceEvents\n| count \n\n\nStockPriceEvents\n| summarize count() by Trend, bin(EventTime, 1m)\n| render timechart \n",
+        "title": "",
+        "dataSourceId": "adae94be-3ce4-4ca2-954d-2084c26ee946"
+      }
+    ],
+    "querysetType": "Embedded"
+  }
+}

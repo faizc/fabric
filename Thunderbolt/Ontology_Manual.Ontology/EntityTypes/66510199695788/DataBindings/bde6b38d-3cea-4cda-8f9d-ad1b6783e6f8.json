@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "bde6b38d-3cea-4cda-8f9d-ad1b6783e6f8",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "completed_date",
+        "targetPropertyId": "3283505584201600281"
+      },
+      {
+        "sourceColumnName": "cost_usd",
+        "targetPropertyId": "3283505625411772460"
+      },
+      {
+        "sourceColumnName": "maintenance_event_id",
+        "targetPropertyId": "3283505625618651469"
+      },
+      {
+        "sourceColumnName": "maintenance_type",
+        "targetPropertyId": "3283505628158592872"
+      },
+      {
+        "sourceColumnName": "odometer_at_service",
+        "targetPropertyId": "3283505626420211570"
+      },
+      {
+        "sourceColumnName": "scheduled_date",
+        "targetPropertyId": "3283505625228984796"
+      },
+      {
+        "sourceColumnName": "status",
+        "targetPropertyId": "3283505625586484579"
+      },
+      {
+        "sourceColumnName": "technician_notes",
+        "targetPropertyId": "3283505627233859863"
+      },
+      {
+        "sourceColumnName": "terminal_id",
+        "targetPropertyId": "3283505626845250608"
+      },
+      {
+        "sourceColumnName": "truck_id",
+        "targetPropertyId": "3283505625694430615"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "f5a5b916-3052-acd3-4850-7f788a158871",
+      "sourceTableName": "maintenance_events",
+      "sourceSchema": null
+    }
+  }
+}

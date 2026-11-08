@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "2913005108502044904",
+  "name": "TripFollowsRoute",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "95205344642254"
+  },
+  "target": {
+    "entityTypeId": "150264637010639"
+  }
+}

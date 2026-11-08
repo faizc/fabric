@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "710e3fcc-093c-4f09-81de-da9d3d83322b",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "f5a5b916-3052-acd3-4850-7f788a158871",
+    "sourceTableName": "company",
+    "sourceSchema": null,
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "stock_symbol",
+      "targetPropertyId": "7050896752498778900"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "stock_symbol",
+      "targetPropertyId": "8855474830140587468"
+    }
+  ]
+}

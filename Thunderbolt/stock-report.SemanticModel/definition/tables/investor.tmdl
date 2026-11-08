@@ -1,0 +1,50 @@
+table investor
+	lineageTag: 04d54757-989f-4fa9-8822-9a789f5d708a
+
+	column investor_id
+		dataType: string
+		lineageTag: 4fb9ab57-dff5-4b75-bb5d-d259cbf0b5f4
+		summarizeBy: none
+		sourceColumn: investor_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column investor_name
+		dataType: string
+		lineageTag: dda64d08-44b4-4154-8dd4-6e844c6b26b4
+		summarizeBy: none
+		sourceColumn: investor_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column investor_type
+		dataType: string
+		lineageTag: 218423c9-2cb3-4829-9c5b-46c1c3035c5b
+		summarizeBy: none
+		sourceColumn: investor_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_profile
+		dataType: string
+		lineageTag: 1dceaa0e-ecbb-44de-8e9d-052daa99d1a3
+		summarizeBy: none
+		sourceColumn: risk_profile
+
+		annotation SummarizationSetBy = Automatic
+
+	partition investor = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\faizchachiya\Downloads\investor.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"investor_id", type text}, {"investor_name", type text}, {"investor_type", type text}, {"risk_profile", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

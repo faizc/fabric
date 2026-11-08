@@ -1,0 +1,104 @@
+table terminals
+	lineageTag: f5c5794b-0290-48c8-8dd3-c9b5490bf20c
+
+	column terminal_id
+		dataType: string
+		lineageTag: 20e97fd7-ec35-4c27-b8e8-e3bdcb5b9385
+		summarizeBy: none
+		sourceColumn: terminal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 25076369-800b-4cdf-807d-ee3f343ca5ea
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: cfe69968-349d-4615-880b-327f0d552505
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: b44fa723-c2b4-45ef-94c6-b81c98613cb2
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 711b2655-cf6e-4880-a285-8b360a365ba7
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 169f1e83-999c-4287-98e9-11f1a209a7f9
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column timezone
+		dataType: string
+		lineageTag: df512c52-6efd-4e39-a8bc-defe3ba4fa48
+		summarizeBy: none
+		sourceColumn: timezone
+
+		annotation SummarizationSetBy = Automatic
+
+	column capacity_trucks
+		dataType: int64
+		formatString: 0
+		lineageTag: f318e000-377f-4677-ae33-df91a76def29
+		summarizeBy: sum
+		sourceColumn: capacity_trucks
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_maintenance_bay
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d5290a6a-91d5-4b37-8c68-5431e2b29013
+		summarizeBy: none
+		sourceColumn: has_maintenance_bay
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		lineageTag: 2e274456-44fc-42c2-beeb-b1d1120470a5
+		summarizeBy: none
+		sourceColumn: address
+
+		annotation SummarizationSetBy = Automatic
+
+	partition terminals = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\tmp\Fabric\trucking-ontology\reference_data\terminals.jsonl"), null, null)}),
+				    #"Transformed Column" = Table.TransformColumns(Source, {"Column1", Json.Document}),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Transformed Column", "Column1", {"terminal_id", "name", "city", "state", "latitude", "longitude", "timezone", "capacity_trucks", "has_maintenance_bay", "address"}, {"terminal_id", "name", "city", "state", "latitude", "longitude", "timezone", "capacity_trucks", "has_maintenance_bay", "address"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"terminal_id", type text}, {"name", type text}, {"city", type text}, {"state", type text}, {"latitude", type number}, {"longitude", type number}, {"timezone", type text}, {"capacity_trucks", Int64.Type}, {"has_maintenance_bay", type logical}, {"address", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

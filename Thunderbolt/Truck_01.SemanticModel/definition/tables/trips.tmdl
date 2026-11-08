@@ -1,0 +1,176 @@
+table trips
+	lineageTag: 1a23f652-bc2b-467d-97ac-dac5b6846d9b
+
+	column trip_id
+		dataType: string
+		lineageTag: cded6e10-efd3-4761-866c-2117be9616b6
+		summarizeBy: none
+		sourceColumn: trip_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_number
+		dataType: string
+		lineageTag: 08f997c8-06a7-49e1-8f86-c29881cc48c3
+		summarizeBy: none
+		sourceColumn: trip_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_id
+		dataType: string
+		lineageTag: 486083a2-6d11-45bd-8e59-788c4e20909a
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_id
+		dataType: string
+		lineageTag: 546d4cb5-aba1-4b19-8f8b-c4dd7124108d
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_id
+		dataType: string
+		lineageTag: 7b35efe3-8549-4386-a3ff-e8620430580f
+		summarizeBy: none
+		sourceColumn: trailer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_id
+		dataType: string
+		lineageTag: d956e089-01ec-4b1d-86e6-3cee52938728
+		summarizeBy: none
+		sourceColumn: load_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_id
+		dataType: string
+		lineageTag: 4e98f9f9-b29d-4ea0-b9cf-5f58f70cee69
+		summarizeBy: none
+		sourceColumn: route_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: b8623e0b-8921-45a1-8648-b13516f7843b
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column scheduled_departure
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c6cc194c-e4e2-4689-99fe-061ba9a8e205
+		summarizeBy: none
+		sourceColumn: scheduled_departure
+
+		variation Variation
+			isDefault
+			relationship: 26bbdacd-377b-4159-8d2d-23b6bb733829
+			defaultHierarchy: LocalDateTable_427fc4ac-7480-458e-bbf3-3575938c3664.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column scheduled_arrival
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f6bd9f4c-3077-4781-9921-1db330f583bb
+		summarizeBy: none
+		sourceColumn: scheduled_arrival
+
+		variation Variation
+			isDefault
+			relationship: 65a4c0d8-d7ff-4493-8d08-049fda18b9ee
+			defaultHierarchy: LocalDateTable_ff141dc2-3d63-42e0-b05b-928ad08294df.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_departure
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5d7dbf73-f3c2-49d3-8fdc-857f9c868f80
+		summarizeBy: none
+		sourceColumn: actual_departure
+
+		variation Variation
+			isDefault
+			relationship: 728eea86-8698-4989-bef9-1630c6cb9cb0
+			defaultHierarchy: LocalDateTable_944e85ca-3a3f-4e3b-9cb8-5e9a803d97fa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_arrival
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cbe783d5-9dbb-4278-b927-fde618e6fff0
+		summarizeBy: none
+		sourceColumn: actual_arrival
+
+		variation Variation
+			isDefault
+			relationship: 1200119e-ec1b-4aef-b967-fa84c077f6ba
+			defaultHierarchy: LocalDateTable_2b30f445-5cc1-4587-868d-ad9ea63ac880.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_latitude
+		dataType: double
+		lineageTag: eaff88fe-2da7-4ff7-a878-1465388fe94c
+		summarizeBy: sum
+		sourceColumn: current_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_longitude
+		dataType: double
+		lineageTag: dd733b30-dbec-41c2-be61-74e45de7c804
+		summarizeBy: sum
+		sourceColumn: current_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column odometer_start
+		dataType: int64
+		formatString: 0
+		lineageTag: 4055daba-5f58-4639-8c8d-62a9474771e5
+		summarizeBy: sum
+		sourceColumn: odometer_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_end
+		dataType: int64
+		formatString: 0
+		lineageTag: b9e5a864-1e96-41e2-96f5-f4f9c24ffc45
+		summarizeBy: sum
+		sourceColumn: odometer_end
+
+		annotation SummarizationSetBy = Automatic
+
+	partition trips = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\tmp\Fabric\trucking-ontology\reference_data\trips.jsonl"), null, null)}),
+				    #"Transformed Column" = Table.TransformColumns(Source, {"Column1", Json.Document}),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Transformed Column", "Column1", {"trip_id", "trip_number", "driver_id", "truck_id", "trailer_id", "load_id", "route_id", "status", "scheduled_departure", "scheduled_arrival", "actual_departure", "actual_arrival", "current_latitude", "current_longitude", "odometer_start", "odometer_end"}, {"trip_id", "trip_number", "driver_id", "truck_id", "trailer_id", "load_id", "route_id", "status", "scheduled_departure", "scheduled_arrival", "actual_departure", "actual_arrival", "current_latitude", "current_longitude", "odometer_start", "odometer_end"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"trip_id", type text}, {"trip_number", type text}, {"driver_id", type text}, {"truck_id", type text}, {"trailer_id", type text}, {"load_id", type text}, {"route_id", type text}, {"status", type text}, {"scheduled_departure", type datetime}, {"scheduled_arrival", type datetime}, {"actual_departure", type datetime}, {"actual_arrival", type datetime}, {"current_latitude", type number}, {"current_longitude", type number}, {"odometer_start", Int64.Type}, {"odometer_end", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

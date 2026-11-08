@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "968d307f-fff2-4d6b-a879-7cd4bd89b803",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "home_terminal_id",
+        "targetPropertyId": "2947537535792859376"
+      },
+      {
+        "sourceColumnName": "last_inspection_date",
+        "targetPropertyId": "2947537534713015244"
+      },
+      {
+        "sourceColumnName": "length_ft",
+        "targetPropertyId": "2947537535075152009"
+      },
+      {
+        "sourceColumnName": "max_weight_lbs",
+        "targetPropertyId": "2947537534607186810"
+      },
+      {
+        "sourceColumnName": "status",
+        "targetPropertyId": "2947537533901477085"
+      },
+      {
+        "sourceColumnName": "trailer_id",
+        "targetPropertyId": "2947537536761414673"
+      },
+      {
+        "sourceColumnName": "trailer_number",
+        "targetPropertyId": "2947537534620738706"
+      },
+      {
+        "sourceColumnName": "type",
+        "targetPropertyId": "2947537534165638259"
+      },
+      {
+        "sourceColumnName": "year",
+        "targetPropertyId": "2947537534511463180"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "f5a5b916-3052-acd3-4850-7f788a158871",
+      "sourceTableName": "trailers",
+      "sourceSchema": null
+    }
+  }
+}

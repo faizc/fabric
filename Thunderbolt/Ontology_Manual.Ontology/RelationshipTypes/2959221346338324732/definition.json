@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "2959221346338324732",
+  "name": "TripMovesTrailer",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "95205344642254"
+  },
+  "target": {
+    "entityTypeId": "18777798231432"
+  }
+}

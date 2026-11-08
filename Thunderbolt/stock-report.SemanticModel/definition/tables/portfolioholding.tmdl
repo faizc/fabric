@@ -1,0 +1,57 @@
+table portfolioholding
+	lineageTag: 8f7f6656-bd05-4ec0-b29e-7d3aa2a0429a
+
+	column holding_id
+		dataType: string
+		lineageTag: d0d5428f-2a33-4571-8ce5-82ee9946d608
+		summarizeBy: none
+		sourceColumn: holding_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column portfolio_id
+		dataType: string
+		lineageTag: 6c1aa770-2ba3-46fe-9853-57cfbcedceed
+		summarizeBy: none
+		sourceColumn: portfolio_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_symbol
+		dataType: string
+		lineageTag: 7cad5f9c-cd7a-44aa-ac5a-083b08569b81
+		summarizeBy: none
+		sourceColumn: stock_symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d0af8a9-8ae0-403e-819b-0d341472bf58
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_purchase_price
+		dataType: int64
+		formatString: 0
+		lineageTag: 57459401-8e90-46ab-9737-13cc3ec36c40
+		summarizeBy: sum
+		sourceColumn: avg_purchase_price
+
+		annotation SummarizationSetBy = Automatic
+
+	partition portfolioholding = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\faizchachiya\Downloads\portfolioholding.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"holding_id", type text}, {"portfolio_id", type text}, {"stock_symbol", type text}, {"quantity", Int64.Type}, {"avg_purchase_price", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

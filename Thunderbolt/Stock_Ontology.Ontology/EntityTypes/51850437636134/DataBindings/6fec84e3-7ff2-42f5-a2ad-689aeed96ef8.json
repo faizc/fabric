@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "6fec84e3-7ff2-42f5-a2ad-689aeed96ef8",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "avg_purchase_price",
+        "targetPropertyId": "8855474828464264670"
+      },
+      {
+        "sourceColumnName": "holding_id",
+        "targetPropertyId": "8855474830140587468"
+      },
+      {
+        "sourceColumnName": "portfolio_id",
+        "targetPropertyId": "8855474831116788320"
+      },
+      {
+        "sourceColumnName": "quantity",
+        "targetPropertyId": "8855474830613661540"
+      },
+      {
+        "sourceColumnName": "stock_symbol",
+        "targetPropertyId": "8855474828283255425"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "f5a5b916-3052-acd3-4850-7f788a158871",
+      "sourceTableName": "portfolioholding",
+      "sourceSchema": null
+    }
+  }
+}

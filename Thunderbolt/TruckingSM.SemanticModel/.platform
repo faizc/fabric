@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "TruckingSM"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ee63ccd3-ca1a-9d2e-4cab-1d687022f46a"
+  }
+}

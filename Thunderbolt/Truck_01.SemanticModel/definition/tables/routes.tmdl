@@ -1,0 +1,107 @@
+table routes
+	lineageTag: f18791a6-55a1-4fd3-819f-d042ade57298
+
+	column route_id
+		dataType: string
+		lineageTag: 9ba2582e-f06c-4221-bc49-0bc6c7287498
+		summarizeBy: none
+		sourceColumn: route_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_name
+		dataType: string
+		lineageTag: b991f4ff-e321-4dc0-8b70-94e7c4ebb340
+		summarizeBy: none
+		sourceColumn: route_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_terminal_id
+		dataType: string
+		lineageTag: 2f73ab65-a2cc-4667-aea5-2ca51f6554c7
+		summarizeBy: none
+		sourceColumn: origin_terminal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_terminal_id
+		dataType: string
+		lineageTag: c5e501ac-acb6-4b2a-a8f7-4d7a28022f3f
+		summarizeBy: none
+		sourceColumn: destination_terminal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_miles
+		dataType: double
+		lineageTag: 47ae7dae-4996-45a2-8cb8-4b67364248bb
+		summarizeBy: none
+		sourceColumn: distance_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column estimated_hours
+		dataType: double
+		lineageTag: 61ad04f8-4834-4a59-8aac-d47d7068e35c
+		summarizeBy: none
+		sourceColumn: estimated_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column estimated_hours_with_stops
+		dataType: double
+		lineageTag: 215a269d-cf6d-441b-b980-eaa18acf3143
+		summarizeBy: none
+		sourceColumn: estimated_hours_with_stops
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column waypoints
+		dataType: string
+		lineageTag: 9812f39b-7ca3-48cf-bf3a-8612a35e5c22
+		summarizeBy: none
+		sourceColumn: waypoints
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_cost_estimate
+		dataType: double
+		lineageTag: 2a26c751-d567-4375-a03f-cd0e8c895c51
+		summarizeBy: none
+		sourceColumn: toll_cost_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_stops_recommended
+		dataType: int64
+		formatString: 0
+		lineageTag: 915c3fc2-85ec-472d-8eb2-e3fec81b26a4
+		summarizeBy: none
+		sourceColumn: fuel_stops_recommended
+
+		annotation SummarizationSetBy = Automatic
+
+	partition routes = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\tmp\Fabric\trucking-ontology\reference_data\routes.jsonl"), null, null)}),
+				    #"Transformed Column" = Table.TransformColumns(Source, {"Column1", Json.Document}),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Transformed Column", "Column1", {"route_id", "route_name", "origin_terminal_id", "destination_terminal_id", "distance_miles", "estimated_hours", "estimated_hours_with_stops", "waypoints", "toll_cost_estimate", "fuel_stops_recommended"}, {"route_id", "route_name", "origin_terminal_id", "destination_terminal_id", "distance_miles", "estimated_hours", "estimated_hours_with_stops", "waypoints", "toll_cost_estimate", "fuel_stops_recommended"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"route_id", type text}, {"route_name", type text}, {"origin_terminal_id", type text}, {"destination_terminal_id", type text}, {"distance_miles", type number}, {"estimated_hours", type number}, {"estimated_hours_with_stops", type number}, {"waypoints", type text}, {"toll_cost_estimate", type number}, {"fuel_stops_recommended", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

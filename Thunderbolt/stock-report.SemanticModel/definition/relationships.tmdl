@@ -1,0 +1,20 @@
+relationship AutoDetected_4d3abcaa-5075-4529-b0aa-fd5084c99050
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: company.stock_symbol
+	toColumn: portfolioholding.stock_symbol
+
+relationship AutoDetected_3fe55859-6897-4991-8a46-126389e1aab4
+	fromColumn: company.sector_id
+	toColumn: sector.sector_id
+
+relationship AutoDetected_2f392455-4939-4643-9ae5-2d29ada75557
+	fromColumn: portfolioholding.portfolio_id
+	toColumn: portfolio.portfolio_id
+
+relationship AutoDetected_94f44dbc-eb30-4c94-a40b-293298f8b87f
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: investor.investor_id
+	toColumn: portfolio.investor_id
+

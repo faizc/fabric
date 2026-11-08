@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "18851d5a-fb1e-4a63-9d3d-0d2ed4e89b39",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "company_id",
+        "targetPropertyId": "7050896752498778900"
+      },
+      {
+        "sourceColumnName": "company_name",
+        "targetPropertyId": "7050896795738005352"
+      },
+      {
+        "sourceColumnName": "headquarters",
+        "targetPropertyId": "7050896795865550207"
+      },
+      {
+        "sourceColumnName": "market_cap_billion",
+        "targetPropertyId": "7050896795804421259"
+      },
+      {
+        "sourceColumnName": "sector_id",
+        "targetPropertyId": "7050896795293964630"
+      },
+      {
+        "sourceColumnName": "stock_symbol",
+        "targetPropertyId": "7050896794982750345"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "f5a5b916-3052-acd3-4850-7f788a158871",
+      "sourceTableName": "company",
+      "sourceSchema": null
+    }
+  }
+}

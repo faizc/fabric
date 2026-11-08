@@ -1,0 +1,101 @@
+table trailers
+	lineageTag: be842e9c-29ad-4c86-8455-edc928437bad
+
+	column trailer_id
+		dataType: string
+		lineageTag: 5b6dc83b-d7b0-4c29-a528-2d4045c4dab7
+		summarizeBy: none
+		sourceColumn: trailer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_number
+		dataType: string
+		lineageTag: bc58a30d-693e-4cd1-9462-e3cf706f8aa8
+		summarizeBy: none
+		sourceColumn: trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: d0fd4ab2-99e3-469e-af29-080ea67511c6
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column length_ft
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b252cff-0b85-4f31-8e69-85c75e49417f
+		summarizeBy: sum
+		sourceColumn: length_ft
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_weight_lbs
+		dataType: int64
+		formatString: 0
+		lineageTag: 52e38352-94a5-40a5-90b0-ec518106a32d
+		summarizeBy: sum
+		sourceColumn: max_weight_lbs
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 69b697d8-0023-4a61-9367-5e45a607b4e9
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_terminal_id
+		dataType: string
+		lineageTag: a2a0a08b-c2b4-45c2-a247-5e2c602eb830
+		summarizeBy: none
+		sourceColumn: home_terminal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 42f86a22-8f46-4ba6-ab24-36a3697223c6
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_inspection_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b1afc045-083b-47fa-a938-13cf6e5b7b49
+		summarizeBy: none
+		sourceColumn: last_inspection_date
+
+		variation Variation
+			isDefault
+			relationship: b6425d29-b22b-428a-9c8f-2300fc10e19a
+			defaultHierarchy: LocalDateTable_b2eadce5-b985-4ecc-9a2a-a319db80e34c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition trailers = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromColumns({Lines.FromBinary(File.Contents("C:\tmp\Fabric\trucking-ontology\reference_data\trailers.jsonl"), null, null)}),
+				    #"Transformed Column" = Table.TransformColumns(Source, {"Column1", Json.Document}),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Transformed Column", "Column1", {"trailer_id", "trailer_number", "type", "length_ft", "max_weight_lbs", "status", "home_terminal_id", "year", "last_inspection_date"}, {"trailer_id", "trailer_number", "type", "length_ft", "max_weight_lbs", "status", "home_terminal_id", "year", "last_inspection_date"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"trailer_id", type text}, {"trailer_number", type text}, {"type", type text}, {"length_ft", Int64.Type}, {"max_weight_lbs", Int64.Type}, {"status", type text}, {"home_terminal_id", type text}, {"year", Int64.Type}, {"last_inspection_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

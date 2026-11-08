@@ -1,0 +1,213 @@
+[
+  {
+    "uniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34",
+    "payload": {
+      "name": "Company",
+      "description": "Container Description",
+      "type": "digitalTwinBuilder"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "faca447d-6e9e-4849-9bf8-21b1aedc3b8a",
+    "payload": {
+      "name": "Company event",
+      "runSettings": {
+        "isStopped": false,
+        "executionIntervalInSeconds": 300
+      },
+      "query": {
+        "queryString": "{\"entitySelector\":{\"queryType\":\"GQL\",\"query\":\"MATCH (node_Company:`Company`) RETURN node_Company.`company_id` AS `company_id`, node_Company.`company_name` AS `company_name`, node_Company.`headquarters` AS `headquarters`, node_Company.`market_cap_billion` AS `market_cap_billion`, node_Company.`sector_id` AS `sector_id`, node_Company.`stock_symbol` AS `stock_symbol`\"},\"timeSeriesSelector\":{\"entityType\":{\"name\":\"Company\"},\"keyColumns\":{\"company_id\":\"company_id\"},\"metrics\":[{\"field\":\"Price\"}]}}",
+        "compositeKey": {
+          "name": "company_id",
+          "keys": [
+            "company_id"
+          ]
+        }
+      },
+      "connection": {
+        "itemId": "65bb3d2b-5418-9340-4973-68c3d70ab6b1",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemType": "DigitalTwinBuilder"
+      },
+      "eventTimeSettings": {
+        "ingestionDelayInSeconds": 0,
+        "timeFieldName": "Timestamp"
+      },
+      "metadata": {
+        "digitalTwinBuilderEntityId": "161990014842287"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      }
+    },
+    "type": "digitalTwinBuilderSource-v1"
+  },
+  {
+    "uniqueIdentifier": "8a513b92-d8c2-4a17-9283-745e59248cb1",
+    "payload": {
+      "name": "Company event",
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"a0627149-231f-420b-b0f6-5a17023b33c2\",\"name\":\"SourceEventStep\",\"rows\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"faca447d-6e9e-4849-9bf8-21b1aedc3b8a\"}],\"kind\":\"SourceReference\",\"name\":\"SourceSelector\"}]}],\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4",
+    "payload": {
+      "name": "company_id",
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "468ec3c9-7681-4080-acb1-7c0146b82f6e",
+    "payload": {
+      "name": "company_id",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"8a1c3a66-e9a4-4785-bde0-20b80755848e\",\"name\":\"IdPartStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "ace39270-0b21-4c6b-9d9c-8c89721cc174",
+    "payload": {
+      "name": "company_id",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"419f8189-64a4-48c7-a998-a582b6519f9e\",\"name\":\"IdStructureStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"468ec3c9-7681-4080-acb1-7c0146b82f6e\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"IdPart\",\"name\":\"IdPart\"}]}],\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "9340788d-5412-49ca-9b44-e20272ea7b1d",
+    "payload": {
+      "name": "Company event",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"25e2d61a-58b0-4490-b3da-46536b95b338\",\"name\":\"SplitEventStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"8a513b92-d8c2-4a17-9283-745e59248cb1\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"company_id\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"468ec3c9-7681-4080-acb1-7c0146b82f6e\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"FieldIdMapping\",\"name\":\"FieldIdMapping\"},{\"arguments\":[{\"name\":\"isAuthoritative\",\"type\":\"boolean\",\"value\":true}],\"kind\":\"EventOptions\",\"name\":\"SplitEventOptions\"}]}],\"templateId\":\"SplitEvent\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "090495c4-1319-4d42-8f50-c76c2d183e2a",
+    "payload": {
+      "name": "Price",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"a136d435-225f-4e22-ae17-2404caff5229\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"9340788d-5412-49ca-9b44-e20272ea7b1d\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"Price\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"262d2056-69c0-4986-9638-6cddc2bc70df\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "67520d0e-232c-4c1d-a7cd-c6f731247647",
+    "payload": {
+      "name": "company_name",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"8123621f-f6f1-4c6f-be0b-ded65439c097\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"9340788d-5412-49ca-9b44-e20272ea7b1d\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"company_name\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"c994906b-ffa2-40d1-ae97-2fa382a3ba30\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "83d9ebe5-1fff-4702-b204-0f65e3abddb7",
+    "payload": {
+      "name": "Trend",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"dafb22f7-c3ed-482b-868c-81fca2d9373a\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"9340788d-5412-49ca-9b44-e20272ea7b1d\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"Trend\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"84e69821-8fe5-404f-bfca-9284847e5c2a\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "1d09b727-73c3-48a7-8a39-eabd7ae5087c",
+    "payload": {
+      "name": "Price",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"9e492d4a-955d-458b-8264-586ea7297b67\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"9340788d-5412-49ca-9b44-e20272ea7b1d\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"Price\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"e3510910-ed07-48bd-9209-5d486b43de0f\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "000af8e1-9679-4bab-98f3-d60883821a8e",
+    "payload": {
+      "name": "Price Increase",
+      "parentObject": {
+        "targetUniqueIdentifier": "06547299-a8d9-4a0b-897b-0bf0e08801e4"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "614a445b-29f6-4c09-a0f9-d90586250a34"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.2.6\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"f5217273-8e38-45ee-861d-9b39b572d25e\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"090495c4-1319-4d42-8f50-c76c2d183e2a\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"b28d8b46-2ebb-48ad-9aba-553b4c970dee\",\"rows\":[{\"name\":\"NumberTrends\",\"kind\":\"NumberTrendsBy\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IncreasesByAtLeast\"},{\"name\":\"offset\",\"type\":\"number\",\"value\":2.0},{\"name\":\"inPercent\",\"type\":\"boolean\",\"value\":true}]},{\"name\":\"OccurrenceOption\",\"kind\":\"ForNthTime\",\"arguments\":[{\"name\":\"n\",\"type\":\"number\",\"value\":1.0},{\"name\":\"duration\",\"type\":\"timeSpan\",\"value\":600000.0}]}]},{\"name\":\"ActStep\",\"id\":\"be41b766-af32-466e-92bf-88ef7613e32e\",\"rows\":[{\"name\":\"EmailBinding\",\"kind\":\"EmailMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"en-us\"},{\"name\":\"sentTo\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"faizchachiya@MngEnvMCAP400170.onmicrosoft.com\"}]},{\"name\":\"copyTo\",\"type\":\"array\",\"values\":[]},{\"name\":\"bCCTo\",\"type\":\"array\",\"values\":[]},{\"name\":\"subject\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Activator alert Price Increase\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The condition for 'Price Increase' has been met\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": true,
+          "shouldApplyRuleOnUpdate": true
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]
