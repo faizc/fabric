@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "656306512289203853",
+  "name": "AircraftMaintenanceForFlight",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "9222912749598853764"
+  },
+  "target": {
+    "entityTypeId": "8165423133976873554"
+  }
+}

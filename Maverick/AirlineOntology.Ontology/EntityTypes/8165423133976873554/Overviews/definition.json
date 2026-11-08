@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/overviews/1.0.0/schema.json",
+  "widgets": null,
+  "settings": {
+    "type": "customTime",
+    "timeRange": {
+      "startTime": "2025-12-31T10:22:11.287Z",
+      "endTime": "2026-01-29T10:22:11.287Z"
+    },
+    "interval": "OneHour",
+    "aggregation": "Average"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "e98d1d8f-63ec-50ac-80da-eab35f6ddd4c",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+    "sourceTableName": "flights",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "flt_id",
+      "targetPropertyId": "3689035397434108117"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "arr_gate_id",
+      "targetPropertyId": "4811944667899628572"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "3a0d818a-a006-523a-84b6-84449c4647d7",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+    "sourceTableName": "baggage",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "bag_id",
+      "targetPropertyId": "4878093784287891964"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "pax_id",
+      "targetPropertyId": "421590105442805251"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "c4925332-51a3-5f30-a75c-ae8eff92eca5",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "timestamp_utc",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "diag_score",
+        "targetPropertyId": "8351378703502963553"
+      },
+      {
+        "sourceColumnName": "timestamp_utc",
+        "targetPropertyId": "1300827818312952615"
+      },
+      {
+        "sourceColumnName": "mnt_evt_id",
+        "targetPropertyId": "3434254392526274623"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "KustoTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "3fb504ea-e246-9a5a-4626-709367da9ddd",
+      "clusterUri": "https://trd-w7rq6k1va2aq6xh5e4.z7.kusto.fabric.microsoft.com",
+      "databaseName": "eh_airlinedata",
+      "sourceTableName": "aircraft_maintenance_events"
+    }
+  }
+}

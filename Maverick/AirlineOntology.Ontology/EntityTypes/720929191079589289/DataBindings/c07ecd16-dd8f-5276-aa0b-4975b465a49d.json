@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "c07ecd16-dd8f-5276-aa0b-4975b465a49d",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "crew_asgn_id",
+        "targetPropertyId": "3692782509230113009"
+      },
+      {
+        "sourceColumnName": "crew_id",
+        "targetPropertyId": "9159290426863988560"
+      },
+      {
+        "sourceColumnName": "flt_id",
+        "targetPropertyId": "1353548630965090377"
+      },
+      {
+        "sourceColumnName": "assigned_role",
+        "targetPropertyId": "43196423322773493"
+      },
+      {
+        "sourceColumnName": "duty_start_utc",
+        "targetPropertyId": "5103777156650366806"
+      },
+      {
+        "sourceColumnName": "duty_end_utc",
+        "targetPropertyId": "4377797650005066656"
+      },
+      {
+        "sourceColumnName": "is_reserve",
+        "targetPropertyId": "6190632269994465623"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "crew_assignments",
+      "sourceSchema": "dbo"
+    }
+  }
+}

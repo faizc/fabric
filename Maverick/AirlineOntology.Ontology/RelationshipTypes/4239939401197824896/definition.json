@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "4239939401197824896",
+  "name": "CrewAssignmentAssignsCrew",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "720929191079589289"
+  },
+  "target": {
+    "entityTypeId": "5370337668278269249"
+  }
+}

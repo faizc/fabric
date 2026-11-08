@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "9067422645783140630",
+  "name": "AirlineHasHubAirport",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "764526837505193885"
+  },
+  "target": {
+    "entityTypeId": "2276510199260358621"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "a8f84c3d-8651-5f3d-865a-c94d24332d9f",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "rte_id",
+        "targetPropertyId": "7818456783284112743"
+      },
+      {
+        "sourceColumnName": "rte_code",
+        "targetPropertyId": "2511915754866722358"
+      },
+      {
+        "sourceColumnName": "origin_ap_id",
+        "targetPropertyId": "5863983949244968777"
+      },
+      {
+        "sourceColumnName": "destination_ap_id",
+        "targetPropertyId": "1919226626115085981"
+      },
+      {
+        "sourceColumnName": "great_circle_dist_nm",
+        "targetPropertyId": "5993393992442910813"
+      },
+      {
+        "sourceColumnName": "typical_dur_min",
+        "targetPropertyId": "6913164556250095223"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "routes",
+      "sourceSchema": "dbo"
+    }
+  }
+}

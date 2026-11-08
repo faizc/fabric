@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Ontology",
+    "displayName": "AirlineOntology"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2f07a85c-b852-b33e-4507-304b725fc05c"
+  }
+}

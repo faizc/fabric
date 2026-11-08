@@ -1,0 +1,34 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "08d2840f-6f67-5326-bf10-15154956f463",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "timestamp_utc",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "bag_temp_c",
+        "targetPropertyId": "8759228239457644080"
+      },
+      {
+        "sourceColumnName": "shock_g",
+        "targetPropertyId": "6190631127058589333"
+      },
+      {
+        "sourceColumnName": "timestamp_utc",
+        "targetPropertyId": "2233771469571154201"
+      },
+      {
+        "sourceColumnName": "bag_id",
+        "targetPropertyId": "4878093784287891964"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "KustoTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "3fb504ea-e246-9a5a-4626-709367da9ddd",
+      "clusterUri": "https://trd-w7rq6k1va2aq6xh5e4.z7.kusto.fabric.microsoft.com",
+      "databaseName": "eh_airlinedata",
+      "sourceTableName": "baggage"
+    }
+  }
+}

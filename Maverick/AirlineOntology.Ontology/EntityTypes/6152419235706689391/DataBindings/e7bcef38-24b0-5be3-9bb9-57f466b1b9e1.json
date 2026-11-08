@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "e7bcef38-24b0-5be3-9bb9-57f466b1b9e1",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "aircraft_id",
+        "targetPropertyId": "4586309527170351084"
+      },
+      {
+        "sourceColumnName": "tail_num",
+        "targetPropertyId": "468949040583660980"
+      },
+      {
+        "sourceColumnName": "manufacturer",
+        "targetPropertyId": "1412999136840293035"
+      },
+      {
+        "sourceColumnName": "model",
+        "targetPropertyId": "2918870403285460937"
+      },
+      {
+        "sourceColumnName": "al_id",
+        "targetPropertyId": "3697987545694168518"
+      },
+      {
+        "sourceColumnName": "in_service_date_utc",
+        "targetPropertyId": "118291166916300370"
+      },
+      {
+        "sourceColumnName": "seat_cap",
+        "targetPropertyId": "3483431009329799915"
+      },
+      {
+        "sourceColumnName": "range_nm",
+        "targetPropertyId": "5075133884343369688"
+      },
+      {
+        "sourceColumnName": "status",
+        "targetPropertyId": "5531903417985136750"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "aircraft",
+      "sourceSchema": "dbo"
+    }
+  }
+}

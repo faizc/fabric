@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "3492101872155024326",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "Route",
+  "entityIdParts": [
+    "7818456783284112743"
+  ],
+  "displayNamePropertyId": "7818456783284112743",
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "7818456783284112743",
+      "name": "RouteId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "2511915754866722358",
+      "name": "RouteCode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "5863983949244968777",
+      "name": "OriginAirportId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "1919226626115085981",
+      "name": "DestinationAirportId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "5993393992442910813",
+      "name": "GreatCircleDistanceNm",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6913164556250095223",
+      "name": "TypicalDurationMin",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    }
+  ],
+  "timeseriesProperties": [],
+  "untypedProperties": []
+}

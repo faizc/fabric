@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "56dee243-f238-544b-b2a6-9968e6b7d87a",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+    "sourceTableName": "aircraft",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "aircraft_id",
+      "targetPropertyId": "4586309527170351084"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "al_id",
+      "targetPropertyId": "3139618688254193271"
+    }
+  ]
+}

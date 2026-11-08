@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "ee1a4ad6-0342-5d6a-a303-7516a1478028",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "crew_id",
+        "targetPropertyId": "5557825777347850682"
+      },
+      {
+        "sourceColumnName": "emp_num",
+        "targetPropertyId": "6856305822293088349"
+      },
+      {
+        "sourceColumnName": "first_name",
+        "targetPropertyId": "5888153612393607294"
+      },
+      {
+        "sourceColumnName": "last_name",
+        "targetPropertyId": "840243964342383025"
+      },
+      {
+        "sourceColumnName": "role",
+        "targetPropertyId": "5951185435698454402"
+      },
+      {
+        "sourceColumnName": "base_ap_id",
+        "targetPropertyId": "1146659923663965739"
+      },
+      {
+        "sourceColumnName": "cert_level",
+        "targetPropertyId": "4684506849437556085"
+      },
+      {
+        "sourceColumnName": "active",
+        "targetPropertyId": "3839446055652446647"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "crew",
+      "sourceSchema": "dbo"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "764526837505193885",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "Airline",
+  "entityIdParts": [
+    "3139618688254193271"
+  ],
+  "displayNamePropertyId": "3139618688254193271",
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "3139618688254193271",
+      "name": "AirlineId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "1975884861564257281",
+      "name": "AirlineName",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "1037571497574908242",
+      "name": "IataCode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "4683078037586679299",
+      "name": "IcaoCode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "2780907400063492918",
+      "name": "Country",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "2212749753710279138",
+      "name": "HubAirportId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "2251263083083271265",
+      "name": "Active",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "3186061625873867596",
+      "name": "FoundedDateUtc",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    }
+  ],
+  "timeseriesProperties": [],
+  "untypedProperties": []
+}

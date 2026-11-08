@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "2466988847598112204",
+  "name": "BookingForPassenger",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "5676322827651142074"
+  },
+  "target": {
+    "entityTypeId": "6005585599204937037"
+  }
+}

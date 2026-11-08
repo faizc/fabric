@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "9a325786-5621-59ee-b6ad-f979ef124b83",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "timestamp_utc",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "surf_temp_c",
+        "targetPropertyId": "2609917045399546518"
+      },
+      {
+        "sourceColumnName": "brake_action_index",
+        "targetPropertyId": "7034995393788600505"
+      },
+      {
+        "sourceColumnName": "wind_gust_kts",
+        "targetPropertyId": "403510492178463953"
+      },
+      {
+        "sourceColumnName": "timestamp_utc",
+        "targetPropertyId": "353888710251422350"
+      },
+      {
+        "sourceColumnName": "rwy_id",
+        "targetPropertyId": "5714262076818801010"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "KustoTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "3fb504ea-e246-9a5a-4626-709367da9ddd",
+      "clusterUri": "https://trd-w7rq6k1va2aq6xh5e4.z7.kusto.fabric.microsoft.com",
+      "databaseName": "eh_airlinedata",
+      "sourceTableName": "runways"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "774a196a-4527-5294-a547-ccbc0b8a88a6",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "bag_id",
+        "targetPropertyId": "4878093784287891964"
+      },
+      {
+        "sourceColumnName": "tag_num",
+        "targetPropertyId": "3135067170309962406"
+      },
+      {
+        "sourceColumnName": "pax_id",
+        "targetPropertyId": "7404220619416851561"
+      },
+      {
+        "sourceColumnName": "booking_id",
+        "targetPropertyId": "1479762769984314189"
+      },
+      {
+        "sourceColumnName": "cur_ap_id",
+        "targetPropertyId": "8766177892931339806"
+      },
+      {
+        "sourceColumnName": "bag_type",
+        "targetPropertyId": "2868148313014361230"
+      },
+      {
+        "sourceColumnName": "wt_kg",
+        "targetPropertyId": "7711505076777110804"
+      },
+      {
+        "sourceColumnName": "chk_at_utc",
+        "targetPropertyId": "725194987627767666"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "baggage",
+      "sourceSchema": "dbo"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "36e62274-0a41-5bd6-98d7-c5d87861a398",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "timestamp_utc",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "fuel_rem_kg",
+        "targetPropertyId": "8621164487605438349"
+      },
+      {
+        "sourceColumnName": "engine_vib_rms",
+        "targetPropertyId": "473745336820796618"
+      },
+      {
+        "sourceColumnName": "hyd_press_psi",
+        "targetPropertyId": "2069553912726146685"
+      },
+      {
+        "sourceColumnName": "timestamp_utc",
+        "targetPropertyId": "5696290144150186691"
+      },
+      {
+        "sourceColumnName": "aircraft_id",
+        "targetPropertyId": "4586309527170351084"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "KustoTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "3fb504ea-e246-9a5a-4626-709367da9ddd",
+      "clusterUri": "https://trd-w7rq6k1va2aq6xh5e4.z7.kusto.fabric.microsoft.com",
+      "databaseName": "eh_airlinedata",
+      "sourceTableName": "aircraft"
+    }
+  }
+}

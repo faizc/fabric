@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "720929191079589289",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "CrewAssignment",
+  "entityIdParts": [
+    "3692782509230113009"
+  ],
+  "displayNamePropertyId": "3692782509230113009",
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "3692782509230113009",
+      "name": "CrewAssignmentId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "9159290426863988560",
+      "name": "CrewId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "1353548630965090377",
+      "name": "FlightId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "43196423322773493",
+      "name": "AssignedRole",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "5103777156650366806",
+      "name": "DutyStartUtc",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "4377797650005066656",
+      "name": "DutyEndUtc",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6190632269994465623",
+      "name": "IsReserve",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    }
+  ],
+  "timeseriesProperties": [
+    {
+      "id": "804826881979290761",
+      "name": "FatigueScore",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Double"
+    },
+    {
+      "id": "7493432587532585844",
+      "name": "TimestampUtc",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    }
+  ],
+  "untypedProperties": []
+}

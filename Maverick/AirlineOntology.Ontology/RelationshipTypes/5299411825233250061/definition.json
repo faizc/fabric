@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "5299411825233250061",
+  "name": "RouteTerminatesAtAirport",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "3492101872155024326"
+  },
+  "target": {
+    "entityTypeId": "2276510199260358621"
+  }
+}

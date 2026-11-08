@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "4cf7a028-5a43-5209-9d92-dd530c57b7ce",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+    "sourceTableName": "aircraft_maintenance_events",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "mnt_evt_id",
+      "targetPropertyId": "3434254392526274623"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "flt_id",
+      "targetPropertyId": "3689035397434108117"
+    }
+  ]
+}

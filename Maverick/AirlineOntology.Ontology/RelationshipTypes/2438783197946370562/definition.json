@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "2438783197946370562",
+  "name": "BaggageOwnedByPassenger",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "6617162277907596227"
+  },
+  "target": {
+    "entityTypeId": "6005585599204937037"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "6f8079dc-83ee-536c-947a-7d813bcb7457",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "ap_id",
+        "targetPropertyId": "5731392464032555948"
+      },
+      {
+        "sourceColumnName": "ap_name",
+        "targetPropertyId": "1152311935416770493"
+      },
+      {
+        "sourceColumnName": "iata_code",
+        "targetPropertyId": "7487539865182057903"
+      },
+      {
+        "sourceColumnName": "city",
+        "targetPropertyId": "4529129090809611620"
+      },
+      {
+        "sourceColumnName": "country",
+        "targetPropertyId": "7063375982904572351"
+      },
+      {
+        "sourceColumnName": "lat",
+        "targetPropertyId": "8737798042925354160"
+      },
+      {
+        "sourceColumnName": "lon",
+        "targetPropertyId": "8712897119149335041"
+      },
+      {
+        "sourceColumnName": "tz",
+        "targetPropertyId": "1152320804742199582"
+      },
+      {
+        "sourceColumnName": "ops_status",
+        "targetPropertyId": "6121077127423507846"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "airports",
+      "sourceSchema": "dbo"
+    }
+  }
+}

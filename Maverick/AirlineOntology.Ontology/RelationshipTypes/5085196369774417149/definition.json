@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "5085196369774417149",
+  "name": "FlightDepartsFromGate",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "8165423133976873554"
+  },
+  "target": {
+    "entityTypeId": "5609269241975239576"
+  }
+}

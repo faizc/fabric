@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "513c8a83-21b0-57a7-83d3-e20120457dfd",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "flt_id",
+        "targetPropertyId": "3689035397434108117"
+      },
+      {
+        "sourceColumnName": "flt_num",
+        "targetPropertyId": "3656170197522622003"
+      },
+      {
+        "sourceColumnName": "al_id",
+        "targetPropertyId": "324756263738940860"
+      },
+      {
+        "sourceColumnName": "aircraft_id",
+        "targetPropertyId": "680049809429011088"
+      },
+      {
+        "sourceColumnName": "rte_id",
+        "targetPropertyId": "7768275349807797472"
+      },
+      {
+        "sourceColumnName": "dep_ap_id",
+        "targetPropertyId": "3118877277127645004"
+      },
+      {
+        "sourceColumnName": "arr_ap_id",
+        "targetPropertyId": "53748374828901916"
+      },
+      {
+        "sourceColumnName": "dep_gate_id",
+        "targetPropertyId": "641407562363772743"
+      },
+      {
+        "sourceColumnName": "arr_gate_id",
+        "targetPropertyId": "3938859311399265575"
+      },
+      {
+        "sourceColumnName": "dep_rwy_id",
+        "targetPropertyId": "3449984644489329654"
+      },
+      {
+        "sourceColumnName": "arr_rwy_id",
+        "targetPropertyId": "2111243507677360016"
+      },
+      {
+        "sourceColumnName": "sched_dep_utc",
+        "targetPropertyId": "5718518426505844533"
+      },
+      {
+        "sourceColumnName": "sched_arr_utc",
+        "targetPropertyId": "6778999600658672706"
+      },
+      {
+        "sourceColumnName": "status",
+        "targetPropertyId": "6717623734488149841"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "flights",
+      "sourceSchema": "dbo"
+    }
+  }
+}

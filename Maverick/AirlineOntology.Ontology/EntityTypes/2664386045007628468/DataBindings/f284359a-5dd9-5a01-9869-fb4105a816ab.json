@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "f284359a-5dd9-5a01-9869-fb4105a816ab",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "rwy_id",
+        "targetPropertyId": "5714262076818801010"
+      },
+      {
+        "sourceColumnName": "ap_id",
+        "targetPropertyId": "325710197313592157"
+      },
+      {
+        "sourceColumnName": "rwy_name",
+        "targetPropertyId": "7415809235685879276"
+      },
+      {
+        "sourceColumnName": "len_m",
+        "targetPropertyId": "1475898310142311523"
+      },
+      {
+        "sourceColumnName": "surf_type",
+        "targetPropertyId": "8456329063370216718"
+      },
+      {
+        "sourceColumnName": "has_ils",
+        "targetPropertyId": "6593098255118385144"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "runways",
+      "sourceSchema": "dbo"
+    }
+  }
+}

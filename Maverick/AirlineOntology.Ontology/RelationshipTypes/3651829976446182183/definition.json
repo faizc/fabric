@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "3651829976446182183",
+  "name": "AirlineOperatesFlight",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "764526837505193885"
+  },
+  "target": {
+    "entityTypeId": "8165423133976873554"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "5370337668278269249",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "Crew",
+  "entityIdParts": [
+    "5557825777347850682"
+  ],
+  "displayNamePropertyId": "5557825777347850682",
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "5557825777347850682",
+      "name": "CrewId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6856305822293088349",
+      "name": "EmployeeNumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "5888153612393607294",
+      "name": "FirstName",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "840243964342383025",
+      "name": "LastName",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "5951185435698454402",
+      "name": "Role",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "1146659923663965739",
+      "name": "BaseAirportId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "4684506849437556085",
+      "name": "CertificationLevel",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "3839446055652446647",
+      "name": "Active",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    }
+  ],
+  "timeseriesProperties": [],
+  "untypedProperties": []
+}

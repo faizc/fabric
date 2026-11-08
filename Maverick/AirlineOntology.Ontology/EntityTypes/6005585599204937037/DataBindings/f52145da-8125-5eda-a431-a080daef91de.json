@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "f52145da-8125-5eda-a431-a080daef91de",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "pax_id",
+        "targetPropertyId": "421590105442805251"
+      },
+      {
+        "sourceColumnName": "first_name",
+        "targetPropertyId": "8152786662315461432"
+      },
+      {
+        "sourceColumnName": "last_name",
+        "targetPropertyId": "6153198171689692568"
+      },
+      {
+        "sourceColumnName": "date_of_birth_utc",
+        "targetPropertyId": "8609911647927368651"
+      },
+      {
+        "sourceColumnName": "email",
+        "targetPropertyId": "7571455318105974163"
+      },
+      {
+        "sourceColumnName": "phone",
+        "targetPropertyId": "3874221930911293668"
+      },
+      {
+        "sourceColumnName": "ppt_num",
+        "targetPropertyId": "1139251235937714940"
+      },
+      {
+        "sourceColumnName": "loy_program_id",
+        "targetPropertyId": "661317035418181032"
+      },
+      {
+        "sourceColumnName": "loy_tier",
+        "targetPropertyId": "3550835081503718907"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "passengers",
+      "sourceSchema": "dbo"
+    }
+  }
+}

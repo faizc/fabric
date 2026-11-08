@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "82abf6bd-9b76-58c6-91d4-7fc8c027f9c3",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "mnt_evt_id",
+        "targetPropertyId": "3434254392526274623"
+      },
+      {
+        "sourceColumnName": "aircraft_id",
+        "targetPropertyId": "8511429833176847079"
+      },
+      {
+        "sourceColumnName": "flt_id",
+        "targetPropertyId": "833088686330813467"
+      },
+      {
+        "sourceColumnName": "wo_ord_num",
+        "targetPropertyId": "5411652353362522291"
+      },
+      {
+        "sourceColumnName": "mnt_type",
+        "targetPropertyId": "4626907930632542379"
+      },
+      {
+        "sourceColumnName": "started_at_utc",
+        "targetPropertyId": "238616956203123071"
+      },
+      {
+        "sourceColumnName": "completed_at_utc",
+        "targetPropertyId": "7376373752225546257"
+      },
+      {
+        "sourceColumnName": "technician_id",
+        "targetPropertyId": "4675735196539550422"
+      },
+      {
+        "sourceColumnName": "is_aog",
+        "targetPropertyId": "6773765613408846383"
+      },
+      {
+        "sourceColumnName": "findings_summary",
+        "targetPropertyId": "1843243290488569557"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "aircraft_maintenance_events",
+      "sourceSchema": "dbo"
+    }
+  }
+}

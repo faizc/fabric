@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "145d46dc-a500-578b-b0d9-c9df8dc7db76",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+    "sourceTableName": "crew_assignments",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "crew_asgn_id",
+      "targetPropertyId": "3692782509230113009"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "crew_id",
+      "targetPropertyId": "5557825777347850682"
+    }
+  ]
+}

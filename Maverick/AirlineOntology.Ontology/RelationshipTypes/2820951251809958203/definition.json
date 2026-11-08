@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "2820951251809958203",
+  "name": "CrewBasedAtAirport",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "5370337668278269249"
+  },
+  "target": {
+    "entityTypeId": "2276510199260358621"
+  }
+}

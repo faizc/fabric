@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "48630026-a073-563f-8a12-fd0d0918c72a",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "booking_id",
+        "targetPropertyId": "4544038892445289158"
+      },
+      {
+        "sourceColumnName": "pnr_code",
+        "targetPropertyId": "4655091653935283477"
+      },
+      {
+        "sourceColumnName": "pax_id",
+        "targetPropertyId": "2517275097512638012"
+      },
+      {
+        "sourceColumnName": "flt_id",
+        "targetPropertyId": "5531106843895317090"
+      },
+      {
+        "sourceColumnName": "booking_created_utc",
+        "targetPropertyId": "7143823785990353830"
+      },
+      {
+        "sourceColumnName": "booking_status",
+        "targetPropertyId": "456804692939044846"
+      },
+      {
+        "sourceColumnName": "fare_class",
+        "targetPropertyId": "5679700104229227668"
+      },
+      {
+        "sourceColumnName": "tot_price_usd",
+        "targetPropertyId": "4478787982404733707"
+      },
+      {
+        "sourceColumnName": "pmt_status",
+        "targetPropertyId": "8733542385751218327"
+      },
+      {
+        "sourceColumnName": "ccy",
+        "targetPropertyId": "5780654427083537828"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "bookings",
+      "sourceSchema": "dbo"
+    }
+  }
+}

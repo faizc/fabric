@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "3034163241035876946",
+  "name": "AircraftOwnedByAirline",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "6152419235706689391"
+  },
+  "target": {
+    "entityTypeId": "764526837505193885"
+  }
+}

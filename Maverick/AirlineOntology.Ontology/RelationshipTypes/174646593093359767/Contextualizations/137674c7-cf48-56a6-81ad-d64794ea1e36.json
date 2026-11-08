@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "137674c7-cf48-56a6-81ad-d64794ea1e36",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+    "sourceTableName": "gates",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "gate_id",
+      "targetPropertyId": "4811944667899628572"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "ap_id",
+      "targetPropertyId": "5731392464032555948"
+    }
+  ]
+}

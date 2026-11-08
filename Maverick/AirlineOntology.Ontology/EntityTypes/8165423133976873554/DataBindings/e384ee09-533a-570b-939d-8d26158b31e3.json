@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "e384ee09-533a-570b-939d-8d26158b31e3",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "timestamp_utc",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "alt_ft",
+        "targetPropertyId": "1512254065855787968"
+      },
+      {
+        "sourceColumnName": "gnd_spd_kts",
+        "targetPropertyId": "3293204064435467585"
+      },
+      {
+        "sourceColumnName": "delay_min",
+        "targetPropertyId": "184293832421681384"
+      },
+      {
+        "sourceColumnName": "timestamp_utc",
+        "targetPropertyId": "2311515255747686866"
+      },
+      {
+        "sourceColumnName": "flt_id",
+        "targetPropertyId": "3689035397434108117"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "KustoTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "3fb504ea-e246-9a5a-4626-709367da9ddd",
+      "clusterUri": "https://trd-w7rq6k1va2aq6xh5e4.z7.kusto.fabric.microsoft.com",
+      "databaseName": "eh_airlinedata",
+      "sourceTableName": "flights"
+    }
+  }
+}

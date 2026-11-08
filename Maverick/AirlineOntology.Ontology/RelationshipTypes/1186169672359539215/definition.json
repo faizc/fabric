@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "1186169672359539215",
+  "name": "RunwayLocatedAtAirport",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "2664386045007628468"
+  },
+  "target": {
+    "entityTypeId": "2276510199260358621"
+  }
+}

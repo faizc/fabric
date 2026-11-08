@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "2f07a85c-b852-b33e-4507-304b725fc05c",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "AirlineOntology",
+  "type": "ontology",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "Airport",
+      "is_selected": true,
+      "display_name": "Airport",
+      "type": "ontology.entity",
+      "description": "AirportId,AvgSecurityWaitMin,AirportName,AvgTaxiOutMin,IataCode,TimestampUtc,City,Country,Latitude,Longitude,Timezone,OpsStatus",
+      "children": []
+    },
+    {
+      "id": "Runway",
+      "is_selected": true,
+      "display_name": "Runway",
+      "type": "ontology.entity",
+      "description": "RunwayId,SurfaceTempC,AirportId,BrakingActionIndex,RunwayName,WindGustKts,LengthM,TimestampUtc,SurfaceType,HasIls",
+      "children": []
+    },
+    {
+      "id": "Route",
+      "is_selected": true,
+      "display_name": "Route",
+      "type": "ontology.entity",
+      "description": "RouteId,RouteCode,OriginAirportId,DestinationAirportId,GreatCircleDistanceNm,TypicalDurationMin",
+      "children": []
+    },
+    {
+      "id": "Crew",
+      "is_selected": true,
+      "display_name": "Crew",
+      "type": "ontology.entity",
+      "description": "CrewId,EmployeeNumber,FirstName,LastName,Role,BaseAirportId,CertificationLevel,Active",
+      "children": []
+    },
+    {
+      "id": "Gate",
+      "is_selected": true,
+      "display_name": "Gate",
+      "type": "ontology.entity",
+      "description": "GateId,BoardingQueueLength,AirportId,TimestampUtc,Terminal,GateNumber,IsInternational",
+      "children": []
+    },
+    {
+      "id": "Booking",
+      "is_selected": true,
+      "display_name": "Booking",
+      "type": "ontology.entity",
+      "description": "BookingId,PnrCode,PassengerId,FlightId,BookingCreatedUtc,BookingStatus,FareClass,TotalPriceUsd,PaymentStatus,Currency",
+      "children": []
+    },
+    {
+      "id": "Passenger",
+      "is_selected": true,
+      "display_name": "Passenger",
+      "type": "ontology.entity",
+      "description": "PassengerId,FirstName,LastName,DateOfBirthUtc,Email,Phone,PassportNumber,LoyaltyProgramId,LoyaltyTier",
+      "children": []
+    },
+    {
+      "id": "Aircraft",
+      "is_selected": true,
+      "display_name": "Aircraft",
+      "type": "ontology.entity",
+      "description": "AircraftId,FuelRemainingKg,TailNumber,EngineVibrationRms,Manufacturer,HydraulicPressurePsi,Model,TimestampUtc,AirlineId,InServiceDateUtc,SeatCapacity,RangeNm,Status",
+      "children": []
+    },
+    {
+      "id": "Baggage",
+      "is_selected": true,
+      "display_name": "Baggage",
+      "type": "ontology.entity",
+      "description": "BaggageId,BagTempC,TagNumber,ShockG,PassengerId,TimestampUtc,BookingId,CurrentAirportId,BagType,WeightKg,CheckedAtUtc",
+      "children": []
+    },
+    {
+      "id": "CrewAssignment",
+      "is_selected": true,
+      "display_name": "CrewAssignment",
+      "type": "ontology.entity",
+      "description": "CrewAssignmentId,FatigueScore,CrewId,TimestampUtc,FlightId,AssignedRole,DutyStartUtc,DutyEndUtc,IsReserve",
+      "children": []
+    },
+    {
+      "id": "Airline",
+      "is_selected": true,
+      "display_name": "Airline",
+      "type": "ontology.entity",
+      "description": "AirlineId,AirlineName,IataCode,IcaoCode,Country,HubAirportId,Active,FoundedDateUtc",
+      "children": []
+    },
+    {
+      "id": "Flight",
+      "is_selected": true,
+      "display_name": "Flight",
+      "type": "ontology.entity",
+      "description": "FlightId,AltitudeFt,FlightNumber,GroundSpeedKts,AirlineId,DelayMinutes,AircraftId,TimestampUtc,RouteId,DepartureAirportId,ArrivalAirportId,DepartureGateId,ArrivalGateId,DepartureRunwayId,ArrivalRunwayId,ScheduledDepartureUtc,ScheduledArrivalUtc,Status",
+      "children": []
+    },
+    {
+      "id": "AircraftMaintenance",
+      "is_selected": true,
+      "display_name": "AircraftMaintenance",
+      "type": "ontology.entity",
+      "description": "MaintenanceEventId,DiagnosticScore,AircraftId,TimestampUtc,FlightId,WorkOrderNumber,MaintenanceType,StartedAtUtc,CompletedAtUtc,TechnicianId,IsAog,FindingsSummary",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "7d865ac8-dcdd-5caf-8f4b-327df555410f",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+    "sourceTableName": "routes",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "rte_id",
+      "targetPropertyId": "7818456783284112743"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "destination_ap_id",
+      "targetPropertyId": "5731392464032555948"
+    }
+  ]
+}

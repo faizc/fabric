@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "410b9008-62a4-5137-9017-6ef3a366bb11",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "al_id",
+        "targetPropertyId": "3139618688254193271"
+      },
+      {
+        "sourceColumnName": "al_name",
+        "targetPropertyId": "1975884861564257281"
+      },
+      {
+        "sourceColumnName": "iata_code",
+        "targetPropertyId": "1037571497574908242"
+      },
+      {
+        "sourceColumnName": "icao_code",
+        "targetPropertyId": "4683078037586679299"
+      },
+      {
+        "sourceColumnName": "country",
+        "targetPropertyId": "2780907400063492918"
+      },
+      {
+        "sourceColumnName": "hub_ap_id",
+        "targetPropertyId": "2212749753710279138"
+      },
+      {
+        "sourceColumnName": "active",
+        "targetPropertyId": "2251263083083271265"
+      },
+      {
+        "sourceColumnName": "founded_date_utc",
+        "targetPropertyId": "3186061625873867596"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "airlines",
+      "sourceSchema": "dbo"
+    }
+  }
+}

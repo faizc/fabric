@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "83c43f1d-5b22-59d9-aa99-043bfc99616a",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "gate_id",
+        "targetPropertyId": "4811944667899628572"
+      },
+      {
+        "sourceColumnName": "ap_id",
+        "targetPropertyId": "1144858455352298878"
+      },
+      {
+        "sourceColumnName": "term",
+        "targetPropertyId": "369261843375819176"
+      },
+      {
+        "sourceColumnName": "gate_num",
+        "targetPropertyId": "1795639255347994946"
+      },
+      {
+        "sourceColumnName": "is_intl",
+        "targetPropertyId": "8306344550421461671"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b5531c39-69da-8d87-4553-b6f9afa3f146",
+      "sourceTableName": "gates",
+      "sourceSchema": "dbo"
+    }
+  }
+}
